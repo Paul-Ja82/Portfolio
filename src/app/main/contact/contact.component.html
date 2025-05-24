@@ -41,7 +41,7 @@
             <label class="check-box-label">
               <input type="checkbox" class="custom-checkbox" id="customCheckbox" #checkboxRefEn (change)="hideForgetBoxIfChecked(checkboxRefEn.checked)" />
               <span>
-                I've read the <a class="privacy-link" [routerLink]="['/projects/privacy']">privacy policy</a> and agree to the processing of my data as outlined.
+                I've read the <a class="privacy-link" [routerLink]="['/privacy']">privacy policy</a> and agree to the processing of my data as outlined.
                 <p id="forgetBox" class="forget-box">Please accept the privacy policy.</p>
               </span>
             </label>
@@ -73,7 +73,7 @@
             <label class="check-box-label">
               <input type="checkbox" class="custom-checkbox" id="customCheckboxDe" #checkboxRefDe (change)="hideForgetBoxIfChecked(checkboxRefDe.checked)" />
               <span>
-                Ich habe die <a class="privacy-link" [routerLink]="['privacy']">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.
+                Ich habe die <a class="privacy-link" [routerLink]="['/privacy']">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.
                 <p id="forgetBoxDe" class="forget-box">Bitte akzeptiere die Datenschutzerklärung.</p>
               </span>
             </label>

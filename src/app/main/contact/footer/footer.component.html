@@ -1,25 +1,26 @@
 <section>
     <header>
-        <h1>PD</h1>
+        <h1 (click)="scrollTo('landingPage')">PD</h1>
         <div class="copyright-div">
             <p> © Paul Dietrich 2025</p>
-            <div class="legal-div" ><a class="legal-link" [routerLink]="['/projects/privacy']">Legal Notice</a></div>
+            <div class="legal-div" ><a class="legal-link" [routerLink]="['/legal']">Legal Notice</a></div>
         </div>
     </header>
     <footer>
        <div class="footer-div">
   <img src="assets/svg/Github.svg" class="icon" id="icon-github" />
-  <a class="footer-a" (click)="triggerFooterIconAnimation('github')">GitHub</a>
+  <a class="footer-a" (click)="triggerFooterIconAnimation('github');openGit()">GitHub</a>
 </div>
 
 <div class="footer-div">
   <img src="assets/svg/Linkedin.svg" class="icon" id="icon-linkedin" />
-  <a class="footer-a" (click)="triggerFooterIconAnimation('linkedin')">Linkedin</a>
+  <span class="linkedin-error">No Linkedin yet</span>
+  <a class="footer-a" (click)="triggerFooterIconAnimation('linkedin'); showLinkedinError()">Linkedin</a>
 </div>
 
 <div class="footer-div">
   <img src="assets/svg/Mail.svg" class="icon" id="icon-email" />
-  <a class="footer-a" (click)="triggerFooterIconAnimation('email')">Email</a>
+  <a href="mailto:info@pauljdietrich.com" class="footer-a" (click)="triggerFooterIconAnimation('email')">Email</a>
 </div>
 
       </footer>      

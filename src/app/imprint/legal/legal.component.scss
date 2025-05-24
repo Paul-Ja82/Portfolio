@@ -24,23 +24,7 @@
     font-size: clamp(1rem, 0.446rem + 2.768vw, 2.938rem);
 }
 
-.button-back{
-    height: 18px;
-    font-size: 18px;
-    position: absolute;
-    top: 10px;
-    right: 8px;
-    font-weight: 700;
-    color:black;
-    background-color: transparent;
-    border: none;
-    display: flex;
-    align-items: center;
-    &:hover {
-        cursor: pointer;
-        color: rgb(249, 136, 102);
-      }
-    }
+
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
@@ -50,6 +34,7 @@ h1, h2, h3, h4, h5, h6 {
 h2 {
     font-size: clamp(2.375rem, 1.964rem + 2.054vw, 3.813rem);
     font-weight: bold;
+    margin-top: 80px;
 }
 
 h3 {
@@ -60,14 +45,36 @@ h4 {
     font-size: 1.5em;
 }
 
-#contentContainer {
-  padding: 3em 1em;
+
+section{
+ height: auto;
+ margin: 0;
+ background-color: rgb(249, 236, 218);
 }
 
 .titleSelection {
     display: flex;
     justify-content: space-between;
     align-items: start;
+    position: relative;
+    .button-back{
+    height: 18px;
+    font-size: 18px;
+    position: absolute;
+    top: 16px;
+    right: 0px;
+    font-weight: 700;
+    color:black;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    &:hover {
+        cursor: pointer;
+        color: rgb(249, 136, 102);
+        text-shadow: rgb(12, 12, 12) 2px 1px 0;
+      }
+    }
 }
 
 .text {
@@ -76,41 +83,32 @@ h4 {
     margin-right: 10%;
 } 
 
+@media (min-width: 800px){
+  section{
+ height: 100vh;
+}
+}
+
 @media (1010px < width) {
   .menu-nav-item {
       flex-direction: row;
-      gap: 0.5em;
       padding: 1.7em var(--spacing-left) !important;
       border-radius: unset;
       justify-content: unset;
   }
 }
 
-@media(max-width: 350px) {
-  .menu-nav-item {
-      scale: 0.95;
-  }
-}
-  
 
 @media(max-width: 1010px) {
-
-    #menuContainer{
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-        z-index: 10;
-    }
 
     #contentContainer {
         padding: 0;
       }
 
       .text {
-        margin-top: 4%;
         margin-left: 4%;
         margin-right: 2%;
-        padding-bottom: 100px;
+        padding-bottom: 40px;
       }
   }
 

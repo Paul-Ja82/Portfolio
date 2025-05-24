@@ -2,7 +2,7 @@
 <section class="jodetails">
   <header>
     <h1 class="blue"><img class="blue" src="/assets/svg/logo.svg"><img class="yellow" src="/assets/svg/logo-hover.svg"></h1>
-    <button class="x" (click)="goTo('projectsDone')" [routerLink]="['/projects/Main']">X</button>
+    <button class="x" (click)="goTo('projectsDone')" [routerLink]="['/Main']">X</button>
   </header>
   <app-navbarDetails></app-navbarDetails>
   <main>
@@ -22,16 +22,16 @@
     <div class="second-div">
     <img class="img-down" src="/assets/png/laptop-join.png">
     <div class="up-button-div">
-       <button> GitHub</button>
+       <button (click)="openRepo()"> GitHub</button>
        <button (click)="goToProject()"> Live Test</button>
     </div>
     </div>
   </main>
     <footer>
-      <div class="en-language"><button class="button-back"  [routerLink]="['/projects/pokedex']"><img class="arrow-back" src="/assets/svg/arrow-back.svg"> Go Back </button></div>
-      <div class="en-language"><button class="button-next"  [routerLink]="['/projects/polloLoco']">Next project<img class="arrow-next" src="/assets/svg/arrow-next.svg"></button></div>
-      <div class="de-language"><button class="button-back"  [routerLink]="['/projects/pokedex']"><img class="arrow-back" src="/assets/svg/arrow-back.svg">Zurück</button></div>
-      <div class="de-language"><button class="button-next"  [routerLink]="['/projects/polloLoco']">Nächstes Projekt <img class="arrow-next" src="/assets/svg/arrow-next.svg"></button></div>
+      <div class="en-language"><button class="button-back"  [routerLink]="['/pokedex']"><img class="arrow-back" src="/assets/svg/arrow-back.svg"> Go Back </button></div>
+      <div class="en-language"><button class="button-next"  [routerLink]="['/polloLoco']">Next project<img class="arrow-next" src="/assets/svg/arrow-next.svg"></button></div>
+      <div class="de-language"><button class="button-back"  [routerLink]="['/pokedex']"><img class="arrow-back" src="/assets/svg/arrow-back.svg">Zurück</button></div>
+      <div class="de-language"><button class="button-next"  [routerLink]="['/polloLoco']">Nächstes Projekt <img class="arrow-next" src="/assets/svg/arrow-next.svg"></button></div>
    
     </footer>
   </section>

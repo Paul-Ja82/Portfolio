@@ -8,12 +8,11 @@ import { PrivacyComponent } from './imprint/privacy/privacy.component';
 
 export const routes: Routes = [
   { path: '', component: MainComponent },
-  { path: 'projects', component: MainComponent }, 
-  { path: 'projects/join', component: JodetailsComponent }, 
-  { path: 'projects/polloLoco', component: PollodetailsComponent },
-  { path: 'projects/pokedex', component: PokedetailsComponent },
-  { path: 'projects/legal', component: LegalComponent },
-  { path: 'projects/privacy', component: PrivacyComponent },
-  { path: 'projects/Main', component: MainComponent },
+  { path: 'join', component: JodetailsComponent }, 
+  { path: 'polloLoco', component: PollodetailsComponent },
+  { path: 'pokedex', component: PokedetailsComponent },
+  { path: 'legal', component: LegalComponent },
+  { path: 'privacy', component: PrivacyComponent },
+  { path: 'Main', component: MainComponent },
 ];
 

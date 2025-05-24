@@ -56,29 +56,29 @@
     <main>
       <section>
         <a class="en-language">
-          <p class="about-me" (click)="scrollTo('aboutOwner')">About me</p>
+          <p class="about-me" (click)="scrollTo('aboutOwner'); hideMenu()">About me</p>
         </a>
         <a class="en-language">
-          <p class="skills" (click)="scrollTo('capability')">Skills</p>
+          <p class="skills" (click)="scrollTo('capability'); hideMenu()">Skills</p>
         </a>
         <a class="en-language">
-          <p class="projects" (click)="scrollTo('projectsDone')">Projects</p>
+          <p class="projects" (click)="scrollTo('projectsDone'); hideMenu()">Projects</p>
         </a>
         <a class="en-language">
-          <p class="contact" (click)="scrollTo('contact')">Contact</p>
+          <p class="contact" (click)="scrollTo('contact'); hideMenu()">Contact</p>
         </a>
   
         <a class="de-language">
-          <p class="about-me">Über mich</p>
+          <p class="about-me" (click)="scrollTo('aboutOwner'); hideMenu()">Über mich</p>
         </a>
         <a class="de-language">
-          <p class="skills">Fähigkeiten</p>
+          <p class="skills" (click)="scrollTo('capability'); hideMenu()">Fähigkeiten</p>
         </a>
         <a class="de-language">
-          <p class="projects">Projekte</p>
+          <p class="projects" (click)="scrollTo('projectsDone'); hideMenu()">Projekte</p>
         </a>
         <a class="de-language">
-          <p class="contact">Kontakt</p>
+          <p class="contact" (click)="scrollTo('contact'); hideMenu()">Kontakt</p>
         </a>
   
         <div class="language-bar-div">

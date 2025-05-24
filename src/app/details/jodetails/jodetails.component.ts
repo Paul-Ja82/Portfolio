@@ -42,5 +42,9 @@ orientationWarning = false;
   goToProject(): void {
   window.open('https://pauljdietrich.com/Join/', '_blank');
 }
+
+openRepo(): void {
+  window.open('https://github.com/Paul-Ja82/Join', '_blank');
+}
   
 }

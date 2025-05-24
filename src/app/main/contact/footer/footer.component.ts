@@ -11,7 +11,19 @@ import { RouterModule, Router } from '@angular/router';
 })
 export class FooterComponent {
 
-  triggerFooterIconAnimation(target: 'github' | 'linkedin' | 'email'): void {
+  scrollTo(id: string): void {
+  setTimeout(() => {
+    const element = document.getElementById(id);
+    if (element) {
+      const yOffset = -100;
+      const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+
+      window.scrollTo({ top: y, behavior: 'smooth' }); 
+    }
+  }, 300);
+}
+
+ triggerFooterIconAnimation(target: 'github' | 'linkedin' | 'email'): void {
   const idMap = {
     github: 'icon-github',
     linkedin: 'icon-linkedin',
@@ -21,16 +33,42 @@ export class FooterComponent {
   const icon = document.getElementById(idMap[target]);
 
   if (icon) {
-    icon.classList.remove('animate');
-    void icon.offsetWidth; // Reflow, damit die Animation neu startet
-    icon.classList.add('animate');
-    icon.style.opacity = '1';
-
-    setTimeout(() => {
-      icon.classList.remove('animate');
-      icon.style.opacity = '0';
-    }, 1000); // nach 1s wieder ausblenden
+    this.startIconAnimation(icon);
+    this.resetIconAnimationAfterDelay(icon, 1000);
   }
 }
+
+private startIconAnimation(icon: HTMLElement): void {
+  icon.classList.remove('animate');
+  void icon.offsetWidth; 
+  icon.classList.add('animate');
+  icon.style.opacity = '1';
+}
+
+private resetIconAnimationAfterDelay(icon: HTMLElement, delay: number): void {
+  setTimeout(() => {
+    icon.classList.remove('animate');
+    icon.style.opacity = '0';
+  }, delay);
+}
+
+
+openGit(): void {
+  setTimeout(() => {
+    window.open('https://github.com/Paul-Ja82', '_blank');
+  }, 1000); 
+}
+
+showLinkedinError(): void {
+  const el = document.querySelector('.linkedin-error') as HTMLElement;
+  if (el) {
+    el.style.opacity = '1';
+
+    setTimeout(() => {
+      el.style.opacity = '0';
+    }, 1000);
+  }
+}
+
 
 }

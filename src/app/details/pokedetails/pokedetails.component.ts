@@ -40,4 +40,8 @@ orientationWarning = false;
   goToProject(): void {
   window.open('https://pauljdietrich.com/PokePaul/', '_blank');
 }
+
+openRepo(): void {
+  window.open('https://github.com/Paul-Ja82/PokePaul', '_blank');
+}
 }

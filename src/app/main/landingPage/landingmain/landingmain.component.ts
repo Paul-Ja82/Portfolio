@@ -43,41 +43,58 @@ export class LandingMainComponent {
   }
 
   setupResponsiveIntro(): void {
-    const isMobile = window.innerWidth < 800;
+  const isMobile = window.innerWidth < 800;
+  this.useRolling = !isMobile;
 
-    this.useRolling = !isMobile;
-    if (isMobile && !this.introInterval) {
-      this.introInterval = setInterval(() => {
-        this.toggleIntro(true);
-        this.showPolaroidColor = true;
-
-        setTimeout(() => {
-          this.toggleIntro(false);
-          this.showPolaroidColor = false;
-        }, 4000);
-      }, 8000);
-    }
-
-    if (!isMobile && this.introInterval) {
-      clearInterval(this.introInterval);
-      this.introInterval = null;
-      this.showIntro = false;
-      this.showPolaroidColor = false;
-    }
+  if (isMobile) {
+    this.initMobileIntro();
+  } else {
+    this.clearDesktopIntro();
   }
+}
 
-  toggleIntro(state: boolean): void {
-    this.showIntro = state;
-  
-    if (state) {
-      this.rotateSvg = false;
-      this.animateIntroText = false;
-      requestAnimationFrame(() => {
-        this.rotateSvg = true;
-        this.animateIntroText = true;
-      });
-    }
+private initMobileIntro(): void {
+  if (!this.introInterval) {
+    this.introInterval = setInterval(() => {
+      this.toggleIntro(true);                  // Intro aktivieren
+      this.colorizePolaroid(true);            // Farbe auf Polaroid aktivieren
+
+      setTimeout(() => {
+        this.toggleIntro(false);              // Intro deaktivieren
+        this.colorizePolaroid(false);         // Farbe zurück auf Schwarz-Weiß
+      }, 4000);                                // nach 4s zurück
+    }, 8000);                                  // alle 8s starten
   }
+}
+
+private clearDesktopIntro(): void {
+  if (this.introInterval) {
+    clearInterval(this.introInterval);
+    this.introInterval = null;
+  }
+  this.showIntro = false;
+  this.showPolaroidColor = false;
+
+  this.colorizePolaroid(false); // Polaroid sicher zurücksetzen
+}
+
+toggleIntro(state: boolean): void {
+  this.showIntro = state;
+
+  if (state) {
+    this.rotateSvg = false;
+    this.animateIntroText = false;
+
+    requestAnimationFrame(() => {
+      this.rotateSvg = true;
+      this.animateIntroText = true;
+    });
+  }
+}
+
+private colorizePolaroid(active: boolean): void {
+  this.showPolaroidColor = active;
+}
 
    scrollTo(id: string): void {
   setTimeout(() => {

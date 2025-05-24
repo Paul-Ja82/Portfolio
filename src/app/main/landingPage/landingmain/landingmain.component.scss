@@ -156,9 +156,8 @@ h1 {
   filter: grayscale(100%) brightness(1.2);
   transition: filter 0.3s ease;
 
-  &:hover {
-    filter: grayscale(0%);
-    cursor: default;
+   &.color-active {
+    filter: grayscale(0%) brightness(1.2);
   }
 }
 
@@ -297,6 +296,12 @@ h1 {
     left: clamp(23.75rem, 6.511rem + 35.821vw, 38.75rem);
     margin-top: -40px;
     margin-left: 0;
+    .polaroid-photo {
+       &:hover {
+      filter: grayscale(0%) brightness(1.2);
+      cursor: default;
+    }
+    }
   }
 
   .title-developer {

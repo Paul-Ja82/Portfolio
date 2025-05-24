@@ -48,44 +48,37 @@ export class NavbarDetailsComponent {
     localStorage.setItem('langLook', 'en');
   }
   
-
   ngAfterViewInit(): void {
-    setTimeout(() => {
-      const storedLang = localStorage.getItem('lang') as 'en' | 'de' | null;
-      const storedLook = localStorage.getItem('langLook') as 'en' | 'de' | null;
+  setTimeout(() => {
+    this.applyStoredLanguage();
+    this.applyStoredLook();
+  });
 
-      if (storedLang === 'de') {
-        this.changeLanguageDe(true);
-      } else {
-        this.changeLanguageEn(true);
-      }
+  this.router.events.subscribe(event => {
+    if (event instanceof NavigationEnd) {
+      this.applyStoredLanguage();
+      this.applyStoredLook();
+    }
+  });
+}
 
-      if (storedLook === 'de') {
-        this.changeLookDe();
-      } else {
-        this.changeLookEn();
-      }
-    });
-
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        const storedLang = localStorage.getItem('lang') as 'en' | 'de' | null;
-        const storedLook = localStorage.getItem('langLook') as 'en' | 'de' | null;
-
-        if (storedLang === 'de') {
-          this.changeLanguageDe(true);
-        } else {
-          this.changeLanguageEn(true);
-        }
-
-        if (storedLook === 'de') {
-          this.changeLookDe();
-        } else {
-          this.changeLookEn();
-        }
-      }
-    });
+private applyStoredLanguage(): void {
+  const storedLang = localStorage.getItem('lang') as 'en' | 'de' | null;
+  if (storedLang === 'de') {
+    this.changeLanguageDe(true);
+  } else {
+    this.changeLanguageEn(true);
   }
+}
+
+private applyStoredLook(): void {
+  const storedLook = localStorage.getItem('langLook') as 'en' | 'de' | null;
+  if (storedLook === 'de') {
+    this.changeLookDe();
+  } else {
+    this.changeLookEn();
+  }
+}
 
   changeLanguageDe(skipStorage = false): void {
     const deElements = document.querySelectorAll<HTMLElement>('.de-language');

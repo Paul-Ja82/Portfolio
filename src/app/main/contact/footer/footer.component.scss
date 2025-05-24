@@ -1,141 +1,159 @@
 section {
-    margin-top: 40px;
-    padding-inline: clamp(1rem, 5vw, 3rem);
-    font-family: 'Bricolage Grotesque';
-    color: rgba(248, 249, 250, 1);
-    header{
-        display: flex;
-        justify-content: space-between;
-        h1 {
-            margin: 0;
-            color: rgba(51, 85, 255, 1);
-            font-size: 24px;
-            &:hover {
-                color: rgba(247, 197, 24, 1);
-              }
-        }
-        .copyright-div{
-            display: flex;
-            flex-direction: column;
-            align-items: end;
-            p{
-              margin-top: 8px;
-            }
-        }
+  margin-top: 40px;
+  padding-inline: clamp(1rem, 5vw, 3rem);
+  font-family: 'Bricolage Grotesque';
+  color: rgba(248, 249, 250, 1);
 
-        .legal-div{
-            margin-bottom: 0px;
-            height: 40px;
-            &:hover{
-            cursor: pointer;
-            background-image: url('/assets/svg/contactline.svg');
-            background-position: center;
-            background-repeat: no-repeat;
-            }
-            .legal-link{
-                color: rgba(248, 249, 250, 1);
-                text-decoration: none;
-            }
-        }
+  header {
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+      margin: 0;
+      color: rgba(51, 85, 255, 1);
+      font-size: 24px;
+
+      &:hover {
+        cursor: pointer;
+        color: rgba(247, 197, 24, 1);
+      }
     }
 
-    footer {
-        margin-top: 16px;
-        margin-left: 2%;
-        margin-right: 2%;
-        padding-bottom: 20px;
-        display: flex;
-        justify-content: space-between;
-      
-        .footer-div {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          position: relative;
-      
-          .icon {
-            width: 28px;
-            height: 28px;
-            opacity: 0;
-            transform: translateX(0) rotate(0);
-            transition: none;
-            position: relative;
-          }
-      
-          .footer-a {
-            text-decoration: none;
-            font-size: 18px;
-            padding: 10px;
-            cursor: pointer;
-            &:hover {
-              cursor: pointer;
-            }
-            &:active{
-                border-radius: 20px;
-                background-color: rgba(51, 85, 255, 1);
-            }
-          }
-      
-          .icon.animate {
-            animation: slideInIcon 1s ease forwards;
-          }
+    .copyright-div {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+
+      p {
+        margin-top: 8px;
+      }
+    }
+
+    .legal-div {
+      margin-bottom: 0;
+      height: 40px;
+
+      &:hover {
+        cursor: pointer;
+        background-image: url('/assets/svg/contactline.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .legal-link {
+        color: rgba(248, 249, 250, 1);
+        text-decoration: none;
+      }
+    }
+  }
+
+  footer {
+    margin-top: 16px;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    .footer-div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+
+      .linkedin-error {
+        position: absolute;
+        left: 4px;
+        top: 0;
+        color: red;
+        font-size:clamp(0.625rem, 0.515rem + 0.471vw, 0.75rem);
+        font-weight: 500;
+        opacity: 0;
+      }
+
+      .icon {
+        width: 28px;
+        height: 28px;
+        opacity: 0;
+        transform: translateX(0) rotate(0);
+        transition: none;
+        position: relative;
+      }
+
+      .footer-a {
+        text-decoration: none;
+        font-size: 18px;
+        color: rgba(248, 249, 250, 1);
+        padding: 10px;
+        appearance: none;
+        cursor: pointer;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &:active {
+          border-radius: 20px;
+          background-color: rgba(51, 85, 255, 1);
         }
       }
-      
-      @keyframes slideInIcon {
-        0% {
-          opacity: 0;
-          transform: translateX(0) rotate(0deg);
-        }
-        100% {
-          opacity: 1;
-          transform: translateX(100%) rotate(360deg);
-        }
-      } 
+
+      .icon.animate {
+        animation: slideInIcon 1s ease forwards;
+      }
+    }
+  }
+
+  @keyframes slideInIcon {
+    0% {
+      opacity: 0;
+      transform: translateX(0) rotate(0deg);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(100%) rotate(360deg);
+    }
+  }
 }
 
 @media (min-width: 800px) {
-
-  section{
+  section {
     width: 100%;
     display: flex;
-    align-items: end;
-  header {
-    width: 300px;
-    display: flex;
-    align-items: start;
-    flex-direction: column;
+    align-items: flex-end;
 
-    .copyright-div{
-            display: flex;
-            flex-direction: column;
-            align-items: start;
-        }
-  }
+    header {
+      width: 300px;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
 
-   footer{
-    width: 100%;
-    margin-left: 5%;
-    padding-bottom: 8px;
-    .footer-div {
-          display: flex;
-          flex-direction: column;
-          align-items: end;
-          position: relative;
-          .footer-a {
-            text-decoration: none;
-            font-size: 18px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            padding-left: 24px;
-            padding-right: 24px;
-            &:hover {
-              cursor: pointer;
-              border-radius: 20px;
-              background-color: rgba(51, 85, 255, 1);
-            }
+      .copyright-div {
+        align-items: flex-start;
+      }
+    }
+
+    footer {
+      width: 100%;
+      margin-left: 5%;
+      padding-bottom: 8px;
+
+      .footer-div {
+        align-items: flex-end;
+        .linkedin-error {
+        font-size:clamp(0.813rem, 0.656rem + 0.313vw, 0.938rem);
+      }
+
+        .footer-a {
+          font-size: 18px;
+          padding: 10px 24px;
+
+          &:hover {
+            border-radius: 20px;
+            background-color: rgba(51, 85, 255, 1);
           }
-   }
-}
-}
+        }
+      }
+    }
+  }
 }

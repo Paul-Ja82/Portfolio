@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, HostListener, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 
@@ -30,6 +30,18 @@ export class NavbarComponent {
   }, 300);
 }
 
+ @HostListener('window:resize', [])
+  onResize(): void {
+    if (window.innerWidth > 800) {
+      this.hideMenu();
+    }
+  }
+
+  ngOnInit(): void {
+    if (window.innerWidth > 800) {
+      this.hideMenu();
+    }
+  }
 
   showMenu(): void {
     this.openMenu.emit(); 

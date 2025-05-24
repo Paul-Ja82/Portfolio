@@ -49,42 +49,52 @@ export class ContactComponent {
     }
   }
 
-  clearForm(): void {
-    this.contactData = {
-      name: '',
-      email: '',
-      message: ''
-    };
+clearForm(): void {
+  this.resetContactData();
+  this.resetInputFields();
+  this.resetCheckboxesAndWarnings();
+}
 
-    const idsToReset = [
-      'name', 'missName',
-      'email', 'missEmail',
-      'message', 'missMessage',
-      'nameDe', 'missNameDe',
-      'emailDe', 'missEmailDe',
-      'messageDe', 'missMessageDe'
-    ];
+ private resetContactData(): void {
+  this.contactData = {
+    name: '',
+    email: '',
+    message: ''
+  };
+}
 
-    idsToReset.forEach(id => {
-      const el = document.getElementById(id) as HTMLInputElement;
-      if (el) {
-        el.value = '';
-        el.style.display = id.includes('miss') ? 'none' : 'block';
-      }
-    });
+private resetInputFields(): void {
+  const idsToReset = [
+    'name', 'missName',
+    'email', 'missEmail',
+    'message', 'missMessage',
+    'nameDe', 'missNameDe',
+    'emailDe', 'missEmailDe',
+    'messageDe', 'missMessageDe'
+  ];
 
-    const checkboxEn = document.getElementById('customCheckbox') as HTMLInputElement;
-    const checkboxDe = document.getElementById('customCheckboxDe') as HTMLInputElement;
-    if (checkboxEn) checkboxEn.checked = false;
-    if (checkboxDe) checkboxDe.checked = false;
+  idsToReset.forEach(id => {
+    const el = document.getElementById(id) as HTMLInputElement;
+    if (el) {
+      el.value = '';
+      el.style.display = id.includes('miss') ? 'none' : 'block';
+    }
+  });
+}
 
-    const forgetBox = document.getElementById('forgetBox') as HTMLElement;
-    const forgetBoxDe = document.getElementById('forgetBoxDe') as HTMLElement;
-    if (forgetBox) forgetBox.style.opacity = '0';
-    if (forgetBoxDe) forgetBoxDe.style.opacity = '0';
-  }
+private resetCheckboxesAndWarnings(): void {
+  const checkboxEn = document.getElementById('customCheckbox') as HTMLInputElement;
+  const checkboxDe = document.getElementById('customCheckboxDe') as HTMLInputElement;
+  if (checkboxEn) checkboxEn.checked = false;
+  if (checkboxDe) checkboxDe.checked = false;
 
-  validateName(event: Event): void {
+  const forgetBox = document.getElementById('forgetBox') as HTMLElement;
+  const forgetBoxDe = document.getElementById('forgetBoxDe') as HTMLElement;
+  if (forgetBox) forgetBox.style.opacity = '0';
+  if (forgetBoxDe) forgetBoxDe.style.opacity = '0';
+}
+
+validateName(event: Event): void {
   const nameInput = document.getElementById('name') as HTMLInputElement | null;
   const missNameInput = document.getElementById('missName') as HTMLElement | null;
   const nameInputDe = document.getElementById('nameDe') as HTMLInputElement | null;

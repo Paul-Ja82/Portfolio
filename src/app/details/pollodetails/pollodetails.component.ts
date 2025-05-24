@@ -41,4 +41,8 @@ orientationWarning = false;
   window.open('https://pauljdietrich.com/PolloLoco/', '_blank');
 }
 
+openRepo(): void {
+  window.open('https://github.com/Paul-Ja82/PolloLoco', '_blank');
+}
+
 }
