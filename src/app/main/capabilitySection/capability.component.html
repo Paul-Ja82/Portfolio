@@ -1,0 +1,68 @@
+<section>
+  <main>
+    <div class="up-div">
+      <header>
+        <nav>
+          <h3 class="en-language">MY STACK</h3>
+          <h1 class="en-language" [ngClass]="{ 'background-active': backgroundActive }">Skill set</h1>
+          <h3 class="de-language">MEINE LISTE</h3>
+          <h1 class="de-language" [ngClass]="{ 'background-active': backgroundActive }">Stärken</h1>
+        </nav>
+      </header>
+
+      <div class="en-language">
+        <div class="skill-text-div">
+          <img class="img-text" src="assets/png/skill-back-img.png">
+          <img class="img-text-M" src="assets/png/skill-back-img-M.png">
+          <img class="img-text-S" src="assets/png/skill-back-img-S.png">
+          <img class="img-text-XS" src="assets/png/skill-back-img-XS.png">
+        </div>
+      </div>
+
+      <div class="de-language">
+        <div class="skill-text-div">
+          <img class="img-text" src="assets/png/skill-back-img-de.png">
+          <img class="img-text-M" src="assets/png/skill-back-de-M.png">
+          <img class="img-text-S" src="assets/png/skill-back-de-S.png">
+          <img class="img-text-XS" src="/assets/png/skill-back-img-XS-de.png">
+        </div>
+      </div>
+    </div>
+
+    <div class="down-div">
+      <table class="svg-table">
+        <tr>
+          <td><img src="/assets/svg/html-icon.svg" alt="Icon 1"></td>
+          <td><img src="/assets/svg/css-icon.svg" alt="Icon 2"></td>
+          <td><img src="/assets/svg/js-icon.svg" alt="Icon 3"></td>
+        </tr>
+        <tr>
+          <td><img src="/assets/svg/ts-icon.svg" alt="Icon 4"></td>
+          <td><img src="/assets/svg/angular-icon.svg" alt="Icon 5"></td>
+          <td><img src="/assets/svg/fireb-icon.svg" alt="Icon 6"></td>
+        </tr>
+        <tr>
+          <td><img src="/assets/svg/git-icon.svg" alt="Icon 7"></td>
+          <td><img src="/assets/svg/api-icon.svg" alt="Icon 8"></td>
+          <td><img src="/assets/svg/scrum-icon.svg" alt="Icon 9"></td>
+        </tr>
+      </table>
+
+      <div class="en-language">
+        <div
+          class="pull-img-div"
+          (click)="animatePullEn()"
+          [ngStyle]="{ 'background-image': 'url(/assets/png/' + pullImageEn + ')' }">
+        </div>
+      </div>
+
+      <div class="de-language">
+        <div
+          class="pull-img-div"
+          (click)="animatePullDe()"
+          [ngStyle]="{ 'background-image': 'url(/assets/png/' + pullImageDe + ')' }">
+        </div>
+      </div>
+    </div>
+  </main>
+</section>

@@ -1,0 +1,99 @@
+<section (click)="handleClick()">
+  <div class="title-div">
+    <div class="world-greetig-div">
+      <div
+        class="world-greetig"
+        [ngClass]="{ 'hidden': showIntro }"
+        (mouseenter)="isDesktop() && toggleIntro(true)"
+      >
+        <p class="en-language">Hello world</p>
+        <p class="de-language">Hallo Welt</p>
+      </div>
+
+      <div
+        class="introduced-person-div"
+        [ngClass]="{ 'hidden': !showIntro }"
+        (mouseleave)="isDesktop() && toggleIntro(false)"
+      >
+      <img
+      #wavingHand
+      src="/assets/svg/waving_hand.svg"
+      class="waving-hand"
+      [class.animate-rotation]="rotateSvg && !useRolling"
+      [class.animate-rolling]="rotateSvg && useRolling"
+    />    
+        <div class="introduced-person" [class.guillotine-in]="animateIntroText">
+          <p class="en-language">I'M PAUL DIETRICH</p>
+          <p class="de-language">ICH BIN PAUL DIETRICH</p>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="en-language">
+      <span class="letter-big">F</span>
+      <span class="letter">r</span>
+      <span class="letter">o</span>
+      <span class="letter">n</span>
+      <span class="letter">t</span>
+      <span class="letter">e</span>
+      <span class="letter">n</span>
+      <span class="letter">d</span><br />
+    </h1>
+    <h1 class="en-language">
+        <div class="title-developer">
+        <span class="letter-big">D</span>
+        <span class="letter-big">E</span>
+        <span class="letter-big">V</span>
+        <span class="letter-big">E</span>
+        <span class="letter-big">L</span>
+        <span class="letter-big">O</span>
+        <span class="letter-big">P</span>
+        <span class="letter-big">E</span>
+        <span class="letter-big">R</span>
+      </div>
+      </h1>
+    
+
+    <h1 class="de-language">
+      <span class="letter-big">F</span>
+      <span class="letter">r</span>
+      <span class="letter">o</span>
+      <span class="letter">n</span>
+      <span class="letter">t</span>
+      <span class="letter">e</span>
+      <span class="letter">n</span>
+      <span class="letter">d</span><br />
+    </h1>
+    <h1 class="de-language">
+    <div class="title-developer">
+      <span class="letter-big">E</span>
+      <span class="letter-big">N</span>
+      <span class="letter-big">T</span>
+      <span class="letter-big">W</span>
+      <span class="letter-big">I</span>
+      <span class="letter-big">C</span>
+      <span class="letter-big">K</span>
+      <span class="letter-big">L</span>
+      <span class="letter-big">E</span>
+      <span class="letter-big">R</span>
+    </div>
+    </h1>
+
+    <div class="touch-button-div">
+      <div class="touch-button">
+        <a class="en-language" (click)="scrollTo('contact')">Get in touch</a>
+        <a class="de-language" (click)="scrollTo('contact')">Schreib mir</a>
+      </div>
+    </div>
+
+    <div class="polaroid-frame">
+      <img
+        class="polaroid-photo"
+        src="/assets/png/pP_resized.png"
+        alt="Foto"
+        [class.color-active]="showPolaroidColor"
+        [class.hover-activated]="isDesktop()"
+      />
+    </div>
+  </div>
+</section>

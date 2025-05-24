@@ -1,0 +1,317 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: clamp(1rem, 5vw, 3rem);
+}
+
+.desktop-nav {
+  width: 72%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.desktop {
+  display: none;
+}
+
+.logo {
+ width: 50px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin-top: 0;
+ margin-left: 0;
+ margin-bottom: 16px; 
+ height: 50px;
+ &:hover{
+  cursor: pointer;
+ }
+ .blue{
+  height: 50px;
+  width: 45px;
+  object-fit:fill;
+ }
+ .yellow{
+  height: 50px;
+  width: 45px;
+  display: none;
+ }
+  &:hover {
+    .blue{
+      display: none;
+    }
+    .yellow{
+      display: block;
+    }
+  }
+}
+
+button {
+  position: relative;
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-top: 1%;
+  border: none;
+  background-color: rgb(19, 19, 19);
+  background-image: url('/assets/svg/Hb.svg');
+  background-size: cover;
+  font-size: inherit;
+  cursor: pointer;
+  transition: background-image 0.2s ease;
+
+  &:hover {
+    background-image: url('/assets/svg/HbHover.svg');
+  }
+}
+
+menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 656px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-image: url('/assets/png/Hb-menu-backround.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 0.3s ease;
+}
+
+menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: clamp(1rem, 5vw, 3rem);
+
+  .x {
+    position: relative;
+    display: block;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background-color: transparent;
+    background-image: url('/assets/svg/Hbx.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: background-image 0.2s ease;
+
+    &:hover {
+      background-image: url('/assets/svg/HbCloseHover.svg');
+    }
+  }
+}
+
+main {
+  margin-top: 12%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  section {
+    text-align: center;
+
+    p {
+      padding: 10px;
+      margin-bottom: 32px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .about-me:hover {
+      background-image: url('/assets/svg/aboutmecircle.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .skills:hover {
+      background-image: url('/assets/svg/skillsline.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .projects:hover {
+      background-image: url('/assets/svg/projectsline.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .contact:hover {
+      background-image: url('/assets/svg/contactline.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .language-bar-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 32px;
+
+      .language-en-orange {
+        width: 32px;
+        height: 32px;
+        background-image: url('/assets/svg/en-orange.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .language-en {
+        width: 32px;
+        height: 32px;
+        display: none;
+        background-image: url('/assets/svg/en-default.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        cursor: pointer;
+
+        &:hover {
+          background-image: url('/assets/svg/en-hover.svg');
+        }
+      }
+
+      .language-bar-l {
+        width: 33px;
+        height: 16px;
+        background-image: url('/assets/svg/l-bar-lx.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .language-bar-r {
+        width: 33px;
+        height: 16px;
+        display: none;
+        background-image: url('/assets/svg/l-bar-rx.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .language-de {
+        width: 32px;
+        height: 32px;
+        background-image: url('/assets/svg/de-default.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        cursor: pointer;
+
+        &:hover {
+          background-image: url('/assets/svg/de-hover.svg');
+        }
+      }
+
+      .language-de-orange {
+        width: 32px;
+        height: 32px;
+        display: none;
+        background-image: url('/assets/svg/de-orange.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  width: 168px;
+
+  .footer-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: solid 1px rgba(248, 249, 250, 1);
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover {
+      border: solid 3px rgba(247, 197, 24, 0.8);
+    }
+  }
+}
+
+@media (min-width:800px) {
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: block;
+    margin-top: 0;
+
+    main {
+      margin: 0;
+      padding-inline: clamp(1rem, 5vw, 3rem);
+    }
+
+    section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      .projects{
+        color: rgba(248, 249, 250, 1);
+      }
+      .contact{
+        color: rgba(248, 249, 250, 1);
+      }
+    }
+
+    .language-bar-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 880px){
+    .language-bar-div{
+      padding-left: 8px;
+      padding-right: 8px;
+      background-color: rgba(5, 5, 5);
+      border-radius: 20px;
+    }
+}
+
+@media (max-width: 850px) {
+  section {
+    .desktop-nav {
+      .contact {
+        color: black;
+      }
+    }
+  }
+}
+
+@media (max-width: 1080px) {
+  section {
+    .desktop-nav {
+      .projects {
+        color: black;
+      }
+    }
+  }
+}

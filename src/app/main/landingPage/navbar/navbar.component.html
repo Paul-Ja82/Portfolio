@@ -1,0 +1,107 @@
+<div class="mobile">
+    <nav>
+      <div class="logo"><img class="blue" src="/assets/png/logo.png"><img class="yellow" src="/assets/png/logo-hover.png"></div>
+      <button (click)="showMenu()"></button>
+    </nav>
+  </div>
+  
+  <div class="desktop">
+    <main>
+      <section>
+        <div class="logo"><img class="blue" src="/assets/png/logo.png"><img class="yellow" src="/assets/png/logo-hover.png"></div>
+        <a class="en-language">
+          <p class="about-me" (click)="scrollTo('aboutOwner')">About me</p>
+        </a>
+        <a class="en-language">
+          <p class="skills" (click)="scrollTo('capability')">Skills</p>
+        </a>
+        <a class="en-language">
+          <p class="projects" (click)="scrollTo('projectsDone')">Projects</p>
+        </a>
+        <a class="en-language">
+          <p class="contact" (click)="scrollTo('contact')">Contact</p>
+        </a>
+  
+        <a class="de-language">
+          <p class="about-me" (click)="scrollTo('aboutOwner')">Über mich</p>
+        </a>
+        <a class="de-language">
+          <p class="skills" (click)="scrollTo('capability')">Können</p>
+        </a>
+        <a class="de-language">
+          <p class="projects" (click)="scrollTo('projectsDone')">Projekte</p>
+        </a>
+        <a class="de-language">
+          <p class="contact" (click)="scrollTo('contact')">Kontakt</p>
+        </a>
+  
+        <div class="language-bar-div">
+          <div class="language-en-orange"></div>
+          <div class="language-en" (click)="changeLookEn(); changeLanguageEn()"></div>
+          <div class="language-bar-l"></div>
+          <div class="language-bar-r"></div>
+          <div class="language-de" (click)="changeLookDe(); changeLanguageDe()"></div>
+          <div class="language-de-orange"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+  
+  <menu  [class.open]="menuOpen" (click)="$event.stopPropagation()">
+    <header>
+    <div class="logo"><img class="blue" src="/assets/png/logo.png"><img class="yellow" src="/assets/png/logo-hover.png"></div>
+      <button class="x" (click)="hideMenu()"></button>
+    </header>
+  
+    <main>
+      <section>
+        <a class="en-language">
+          <p class="about-me" (click)="scrollTo('aboutOwner')">About me</p>
+        </a>
+        <a class="en-language">
+          <p class="skills" (click)="scrollTo('capability')">Skills</p>
+        </a>
+        <a class="en-language">
+          <p class="projects" (click)="scrollTo('projectsDone')">Projects</p>
+        </a>
+        <a class="en-language">
+          <p class="contact" (click)="scrollTo('contact')">Contact</p>
+        </a>
+  
+        <a class="de-language">
+          <p class="about-me">Über mich</p>
+        </a>
+        <a class="de-language">
+          <p class="skills">Fähigkeiten</p>
+        </a>
+        <a class="de-language">
+          <p class="projects">Projekte</p>
+        </a>
+        <a class="de-language">
+          <p class="contact">Kontakt</p>
+        </a>
+  
+        <div class="language-bar-div">
+          <div class="language-en-orange"></div>
+          <div class="language-en" (click)="changeLookEn(); changeLanguageEn()"></div>
+          <div class="language-bar-l"></div>
+          <div class="language-bar-r"></div>
+          <div class="language-de" (click)="changeLookDe(); changeLanguageDe()"></div>
+          <div class="language-de-orange"></div>
+        </div>
+      </section>
+  
+      <footer>
+        <a class="footer-icons">
+          <img src="assets/svg/Linkedin.svg">
+        </a>
+        <a class="footer-icons">
+          <img src="assets/svg/Github.svg">
+        </a>
+        <a class="footer-icons">
+          <img src="assets/svg/Mail.svg">
+        </a>
+      </footer>
+    </main>
+  </menu>
+  

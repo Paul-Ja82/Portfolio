@@ -1,0 +1,42 @@
+<body>
+<section class="jodetails">
+    <header>
+      <h1 class="blue"><img class="blue" src="/assets/svg/logo.svg"><img class="yellow" src="/assets/svg/logo-hover.svg"></h1>
+      <button class="x" (click)="goTo('polloLoco')" [routerLink]="['/projects/Main']">X</button>
+    </header>
+    <app-navbarDetails></app-navbarDetails>
+    <main>
+      <div class="first-div">
+     <h2>Pollo Loco</h2>
+      <img class="blue-line" src="/assets/svg/blue-line.svg">
+      <p class="en-language"><strong>Description</strong><br> Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.<br> </p>
+      <p class="en-language"><strong>Implementation Details</strong><br>Building this game was an exciting addition to my previous experience in web development. Unlike traditional website projects, it required me to deal with real-time interactions, game logic, state management, and frequent visual feedback. Through this, I was able to broaden my technical understanding and explore new aspects of interactive application development. </p>
+      <p class="de-language"><strong>Beschreibung</strong><br>Jump'n'Run- und Wurfspiel basierend auf objektorientierter Programmierung. Hilf Pepe, Münzen und Tabasco-Soße zu finden, um gegen das verrückte Huhn zu kämpfen.
+        Projektdetails.<br></p>
+      <p class="de-language"><strong>Umsetzungsdetails</strong><br>Das Bauen dieses Spiels war für mich eine spannende Ergänzung zu meiner bisherigen Erfahrung in der Webentwicklung. Im Unterschied zum klassischen Webseitenbau musste ich mich mit Echtzeit-Interaktionen, Spiellogik, Zustandsverwaltung und häufigem visuellem Feedback auseinandersetzen. Dabei konnte ich mein technisches Verständnis erweitern und neue Aspekte der interaktiven Anwendungsentwicklung kennenlernen.</p>
+      <p class="en-language"><strong>Duration</strong>: 3 weeks</p>
+      <p class="de-language"><strong>Dauer</strong>: 3 Wochen</p>
+      <img class="img-up" src="/assets/svg/html-css-js-sticker.svg">
+      </div>
+      <div class="second-div">
+      <img class="img-down" src="/assets/png/laptop-pollo.png">
+      <div class="up-button-div">
+         <button> GitHub</button>
+         <button (click)="goToProject()"> Live Test</button>
+      </div>
+      </div>
+    </main>
+      <footer>
+        <div class="en-language"><button class="button-back"  [routerLink]="['/projects/join']"><img class="arrow-back" src="/assets/svg/arrow-back.svg"> Go Back </button></div>
+        <div class="en-language"><button class="button-next"  [routerLink]="['/projects/pokedex']">Next project<img class="arrow-next" src="/assets/svg/arrow-next.svg"></button></div>
+        <div class="de-language"><button class="button-back"  [routerLink]="['/projects/join']"><img class="arrow-back" src="/assets/svg/arrow-back.svg">Zurück</button></div>
+        <div class="de-language"><button class="button-next"  [routerLink]="['/projects/pokedex']">Nächstes Projekt <img class="arrow-next" src="/assets/svg/arrow-next.svg"></button></div>
+     
+      </footer>
+    </section>
+    <div *ngIf="orientationWarning" class="orientation-blocker">
+  <p>Please rotate your device to portrait mode.</p>
+  </div>
+    </body>
+    
+  

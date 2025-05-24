@@ -1,0 +1,42 @@
+<body>
+<section class="jodetails">
+  <header>
+    <h1 class="blue"><img class="blue" src="/assets/svg/logo.svg"><img class="yellow" src="/assets/svg/logo-hover.svg"></h1>
+    <button class="x" (click)="goTo('projectsDone')" [routerLink]="['/projects/Main']">X</button>
+  </header>
+  <app-navbarDetails></app-navbarDetails>
+  <main>
+    <div class="first-div">
+   <h2>Join</h2>
+    <img class="blue-line" src="/assets/svg/blue-line.svg">
+    <p class="en-language"><strong>Description</strong><br> manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories. 
+      Project details.<br><br> </p>
+    <p class="en-language"><strong>Implementation Details</strong><br>This project was a group effort that was both technically and organizationally demanding. The close collaboration within the team from planning and coordination to implementation proved especially instructive. Despite minor challenges in communication, the experience was highly valuable and strengthened both my technical and interpersonal skills. </p>
+    <p class="de-language"><strong>Beschreibung</strong><br>Task-Manager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben per Drag-and-Drop, weise Benutzer und Kategorien zu.
+      Projektdetails.<br><br> </p>
+    <p class="de-language"><strong>Umsetzungsdetails</strong><br>Dieses Projekt war eine Gruppenarbeit, die sowohl technisch als auch organisatorisch anspruchsvoll war. Besonders lehrreich war die enge Zusammenarbeit im Team von der Planung über die Abstimmung bis zur Umsetzung. Trotz kleiner Herausforderungen in der Koordination war die Erfahrung sehr wertvoll und hat meine fachlichen und sozialen Fähigkeiten gestärkt</p>
+    <p class="en-language"><strong>Duration</strong>: 4 weeks</p>
+    <p class="de-language"><strong>Dauer</strong>: 4 Wochen</p>
+    <img class="img-up" src="/assets/svg/html-css-js-sticker.svg">
+    </div>
+    <div class="second-div">
+    <img class="img-down" src="/assets/png/laptop-join.png">
+    <div class="up-button-div">
+       <button> GitHub</button>
+       <button (click)="goToProject()"> Live Test</button>
+    </div>
+    </div>
+  </main>
+    <footer>
+      <div class="en-language"><button class="button-back"  [routerLink]="['/projects/pokedex']"><img class="arrow-back" src="/assets/svg/arrow-back.svg"> Go Back </button></div>
+      <div class="en-language"><button class="button-next"  [routerLink]="['/projects/polloLoco']">Next project<img class="arrow-next" src="/assets/svg/arrow-next.svg"></button></div>
+      <div class="de-language"><button class="button-back"  [routerLink]="['/projects/pokedex']"><img class="arrow-back" src="/assets/svg/arrow-back.svg">Zurück</button></div>
+      <div class="de-language"><button class="button-next"  [routerLink]="['/projects/polloLoco']">Nächstes Projekt <img class="arrow-next" src="/assets/svg/arrow-next.svg"></button></div>
+   
+    </footer>
+  </section>
+  <div *ngIf="orientationWarning" class="orientation-blocker">
+  <p>Please rotate your device to portrait mode.</p>
+  </div>
+ </body>
+  

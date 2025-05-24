@@ -1,0 +1,22 @@
+section {
+    background-image: url('/assets/png/Hb-menu-backround.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto;
+    min-height: 812px;
+    font-family: 'Bricolage Grotesque';
+    color: rgba(248, 249, 250, 1);
+  }
+
+  @media (min-width: 800px) {
+    section{
+      min-height: 900px;
+    }
+  }
+
+
+
+  
+ 
+  

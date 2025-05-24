@@ -1,0 +1,42 @@
+<body>
+<section class="jodetails">
+    <header>
+      <h1 class="blue"><img class="blue" src="/assets/svg/logo.svg"><img class="yellow" src="/assets/svg/logo-hover.svg"></h1>
+      <button class="x" (click)="goTo('pokedex')" [routerLink]="['/projects/Main']">X</button>
+    </header>
+    <app-navbarDetails></app-navbarDetails>
+    <main>
+      <div class="first-div">
+     <h2>Pokédex</h2>
+      <img class="blue-line" src="/assets/svg/blue-line.svg">
+      <p class="en-language"><strong class="expl-title">Description</strong><br> Interactive Pokémon encyclopedia, browse the Pokémon world by type, name, or ID. Built on an external API with dynamic display and detailed views for each Pokémon.<br><br> </p>
+      <p class="en-language"><strong class="expl-title">Implementation Details</strong><br>This project provided a practical introduction to working with external APIs. Using the public Pokémon API, I was able to fetch, process, and display data dynamically. In the process, I learned key concepts such as HTTP requests, asynchronous data handling, and error management in a frontend context.</p>
+      <p class="de-language"><strong class="expl-title">Beschreibung</strong><br>Interaktives Nachschlagewerk für Pokémon, durchsuche die Welt der Pokémon nach Typ, Name oder ID. Basierend auf einer externen API, mit dynamischer Anzeige und Detailansicht zu jedem Pokémon.
+        Projektdetails.<br><br> </p>
+      <p class="de-language"><strong class="expl-title">Umsetzungsdetails</strong><br>Dieses Projekt bot einen praktischen Einstieg in die Arbeit mit externen APIs. Über die öffentliche Pokémon-API konnte ich Daten dynamisch abrufen, verarbeiten und darstellen. Dabei lernte ich zentrale Konzepte wie HTTP-Requests, asynchrone Verarbeitung und Fehlerbehandlung im Frontend-Kontext kennen.</p>
+      <p class="en-language"><strong class="expl-title">Duration</strong>: 3 weeks</p>
+      <p class="de-language"><strong class="expl-title">Dauer</strong>: 3 Wochen</p>
+      <img class="img-up" src="/assets/svg/html-css-js-sticker.svg">
+      </div>
+      <div class="second-div">
+      <img class="img-down" src="/assets/png/laptop-poke.png">
+      <div class="up-button-div">
+         <button> GitHub</button>
+         <button (click)="goToProject()"> Live Test</button>
+      </div>
+      </div>
+    </main>
+      <footer>
+        <div class="en-language"><button class="button-back"  [routerLink]="['/projects/polloLoco']"><img class="arrow-back" src="/assets/svg/arrow-back.svg"> Go Back </button></div>
+        <div class="en-language"><button class="button-next"  [routerLink]="['/projects/join']">Next project<img class="arrow-next" src="/assets/svg/arrow-next.svg"></button></div>
+        <div class="de-language"><button class="button-back"  [routerLink]="['/projects/polloLoco']"><img class="arrow-back" src="/assets/svg/arrow-back.svg">Zurück</button></div>
+        <div class="de-language"><button class="button-next"  [routerLink]="['/projects/join']">Nächstes Projekt <img class="arrow-next" src="/assets/svg/arrow-next.svg"></button></div>
+     
+      </footer>
+    </section>
+    <div *ngIf="orientationWarning" class="orientation-blocker">
+  <p>Please rotate your device to portrait mode.</p>
+  </div>
+    </body>
+  
+
