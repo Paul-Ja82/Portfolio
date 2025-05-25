@@ -54,17 +54,34 @@ export class LandingMainComponent {
 }
 
 private initMobileIntro(): void {
-  if (!this.introInterval) {
-    this.introInterval = setInterval(() => {
-      this.toggleIntro(true);                  // Intro aktivieren
-      this.colorizePolaroid(true);            // Farbe auf Polaroid aktivieren
+  if (this.introInterval) return;
 
-      setTimeout(() => {
-        this.toggleIntro(false);              // Intro deaktivieren
-        this.colorizePolaroid(false);         // Farbe zurück auf Schwarz-Weiß
-      }, 4000);                                // nach 4s zurück
-    }, 8000);                                  // alle 8s starten
-  }
+  setTimeout(() => {
+    this.startInitialIntro();
+    this.startIntroInterval();
+  }, 2500);
+}
+
+private startInitialIntro(): void {
+  this.toggleIntro(true);
+  this.colorizePolaroid(true);
+
+  setTimeout(() => {
+    this.toggleIntro(false);
+    this.colorizePolaroid(false);
+  }, 4000);
+}
+
+private startIntroInterval(): void {
+  this.introInterval = setInterval(() => {
+    this.toggleIntro(true);
+    this.colorizePolaroid(true);
+
+    setTimeout(() => {
+      this.toggleIntro(false);
+      this.colorizePolaroid(false);
+    }, 4000);
+  }, 8000);
 }
 
 private clearDesktopIntro(): void {
@@ -75,7 +92,7 @@ private clearDesktopIntro(): void {
   this.showIntro = false;
   this.showPolaroidColor = false;
 
-  this.colorizePolaroid(false); // Polaroid sicher zurücksetzen
+  this.colorizePolaroid(false); 
 }
 
 toggleIntro(state: boolean): void {
