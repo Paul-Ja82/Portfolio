@@ -20,68 +20,149 @@
 
     <div class="down-div">
       <div class="contact-form" #contactFormWrapper>
-
         <div class="en-language">
-          <form #form="ngForm" (ngSubmit)="validateInfo($event); onSubmit(form)">
-            <label for="name">What's your name?</label>
-            <input [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="Your name goes here" autocomplete="off" required />
-            <input type="text" id="missName" name="name" class="name-miss" placeholder="Oops! Your name is missing (Only A..Z)" />
+          <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+
+            <label>What's your name?</label>
+            <input
+              [class.error]="invalidName"
+              #nameRef
+              type="text"
+              name="name"
+              [(ngModel)]="contactData.name"
+              [attr.placeholder]="invalidName ? 'Oops! Your name is missing (Only A..Z)' : 'Your name goes here'"
+              required
+            />
             <div class="divider-yellow"></div>
 
-            <label for="email">What's your email?</label>
-            <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="youremail@email.com" autocomplete="off" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"/>
-            <input type="email" id="missEmail" name="email" class="mail-miss" placeholder="Hoppla! Your valid email is required" />
+            <label>What's your email?</label>
+            <input
+              [class.error]="invalidEmail"
+              #emailRef
+              type="email"
+              name="email"
+              [(ngModel)]="contactData.email"
+              [attr.placeholder]="invalidEmail ? 'Hoppla! Your valid email is required' : 'youremail@email.com'"
+              required
+              pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+            />
             <div class="divider-yellow"></div>
 
-            <label for="message">How can I help you?</label>
-            <input [(ngModel)]="contactData.message" type="text" id="message" name="message" placeholder="Hello Paul, I am interested..." autocomplete="off" required />
-            <input type="text" id="missMessage" name="message" class="msg-miss" placeholder="What do you need to develop?" />
+            <label>How can I help you?</label>
+            <textarea
+              [class.error]="invalidMessage"
+              #messageRef
+              name="message"
+              [(ngModel)]="contactData.message"
+              [attr.placeholder]="invalidMessage ? 'What do you need to develop?' : 'Hello Paul, I am interested...'"
+              minlength="2"
+              required
+            ></textarea>
             <div class="divider-yellow"></div>
 
             <label class="check-box-label">
-              <input type="checkbox" class="custom-checkbox" id="customCheckbox" #checkboxRefEn (change)="hideForgetBoxIfChecked(checkboxRefEn.checked)" />
+              <input
+                type="checkbox"
+                class="custom-checkbox"
+                id="customCheckbox"
+                #checkboxRefEn
+                (change)="onCheckboxChange(checkboxRefEn.checked)"
+              />
               <span>
-                I've read the <a class="privacy-link" [routerLink]="['/privacy']">privacy policy</a> and agree to the processing of my data as outlined.
+                I've read the
+                <a class="privacy-link" [routerLink]="['/privacy']">privacy policy</a>
+                and agree to the processing of my data as outlined.
                 <p id="forgetBox" class="forget-box">Please accept the privacy policy.</p>
               </span>
             </label>
-            <div class="sent-msg">Message sent<img src="/assets/svg/Mail.svg"></div>
-            <div class="form-button-div" (click)="handleClick(checkboxRefEn.checked)">
-              <img class="zigzag-arrow" src="/assets/svg/arrow-zig-zag.svg" [class.animate-arrow]="checkboxRefEn.checked" />
-              <button [disabled]="!checkboxRefEn.checked" type="submit">Send</button>
+
+            <div class="sent-msg">
+              Message sent <img src="/assets/svg/Mail.svg" />
             </div>
+
+            <div class="form-button-div" (click)="handleInvalidClick(checkboxRefEn.checked)">
+              <img
+                class="zigzag-arrow"
+                src="/assets/svg/arrow-zig-zag.svg"
+                [class.animate-arrow]="contactForm.valid && checkboxRefEn.checked"
+              />
+              <button type="submit" [disabled]="!contactForm.valid || !checkboxRefEn.checked">Send</button>
+            </div>
+
           </form>
         </div>
-
         <div class="de-language">
-          <form #formDe="ngForm" (ngSubmit)="validateInfo($event); onSubmit(formDe)">
-            <label for="name">Wie heißt du?</label>
-            <input [(ngModel)]="contactData.name" type="text" id="nameDe" name="name" placeholder="Dein Name hier" autocomplete="off" required />
-            <input type="text" id="missNameDe" name="name" class="name-miss" placeholder="Ups! Dein Name fehlt (Nur A..Z)" />
+          <form #formDe="ngForm" (ngSubmit)="onSubmit(formDe)">
+
+            <label>Wie heißt du?</label>
+            <input
+              [class.error]="invalidName"
+              #nameRefDe
+              type="text"
+              name="name"
+              [(ngModel)]="contactData.name"
+              [attr.placeholder]="invalidName ? 'Ups! Dein Name fehlt (Nur A..Z)' : 'Dein Name hier'"
+              required
+              autocomplete="off"
+            />
             <div class="divider-yellow"></div>
 
-            <label for="email">Deine E-Mail-Adresse?</label>
-            <input [(ngModel)]="contactData.email" type="email" id="emailDe" name="email" placeholder="deine@email.de" autocomplete="off" required/>
-            <input type="email" id="missEmailDe" name="email" class="mail-miss" placeholder="Hoppla! Deine gültige E-Mail ist erforderlich" />
+            <label>Deine E-Mail-Adresse?</label>
+            <input
+              [class.error]="invalidEmail"
+              #emailRefDe
+              type="email"
+              name="email"
+              [(ngModel)]="contactData.email"
+              [attr.placeholder]="invalidEmail ? 'Hoppla! Deine gültige E-Mail ist erforderlich' : 'deine@email.de'"
+              required
+              pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+              autocomplete="off"
+            />
             <div class="divider-yellow"></div>
 
-            <label for="message">Wie kann ich dir helfen?</label>
-            <input [(ngModel)]="contactData.message" type="text" id="messageDe" name="message" placeholder="Hallo Paul, ich interessiere mich für..." autocomplete="off" required/>
-            <input type="text" id="missMessageDe" name="message" class="msg-miss" placeholder="Worum geht’s genau?" />
+            <label>Wie kann ich dir helfen?</label>
+            <textarea
+              [class.error]="invalidMessage"
+              #messageRefDe
+              name="message"
+              [(ngModel)]="contactData.message"
+              [attr.placeholder]="invalidMessage ? 'Worum geht’s genau?' : 'Hallo Paul, ich interessiere mich für...'"
+              minlength="2"
+              required
+              autocomplete="off"
+            ></textarea>
             <div class="divider-yellow"></div>
 
             <label class="check-box-label">
-              <input type="checkbox" class="custom-checkbox" id="customCheckboxDe" #checkboxRefDe (change)="hideForgetBoxIfChecked(checkboxRefDe.checked)" />
+              <input
+                type="checkbox"
+                class="custom-checkbox"
+                id="customCheckboxDe"
+                #checkboxRefDe
+                (change)="onCheckboxChange(checkboxRefDe.checked)"
+              />
               <span>
-                Ich habe die <a class="privacy-link" [routerLink]="['/privacy']">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.
+                Ich habe die
+                <a class="privacy-link" [routerLink]="['/privacy']">Datenschutzerklärung</a>
+                gelesen und stimme der Verarbeitung meiner Daten zu.
                 <p id="forgetBoxDe" class="forget-box">Bitte akzeptiere die Datenschutzerklärung.</p>
               </span>
             </label>
-             <div class="sent-msg-de">Ok gesendet<img src="/assets/svg/Mail.svg"></div>
-            <div class="form-button-div" (click)="handleClick(checkboxRefDe.checked)">
-              <img class="zigzag-arrow" src="/assets/svg/arrow-zig-zag.svg" [class.animate-arrow]="checkboxRefDe.checked" />
-              <button [disabled]="!checkboxRefDe.checked" type="submit">Senden</button>
+
+            <div class="sent-msg-de">
+              Ok gesendet <img src="/assets/svg/Mail.svg" />
             </div>
+
+            <div class="form-button-div" (click)="handleInvalidClick(checkboxRefDe.checked)">
+              <img
+                class="zigzag-arrow"
+                src="/assets/svg/arrow-zig-zag.svg"
+                [class.animate-arrow]="formDe.valid && checkboxRefDe.checked"
+              />
+              <button type="submit" [disabled]="!formDe.valid || !checkboxRefDe.checked">Senden</button>
+            </div>
+
           </form>
         </div>
 
@@ -89,5 +170,7 @@
     </div>
   </main>
 
-  <app-footer></app-footer>
+  <footer>
+    <app-footer></app-footer>
+  </footer>
 </section>

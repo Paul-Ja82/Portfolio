@@ -4,7 +4,7 @@
       <div
         class="world-greetig"
         [ngClass]="{ 'hidden': showIntro }"
-        (mouseenter)="isDesktop() && toggleIntro(true)"
+        (mouseenter)="toggleIntro(true)"
       >
         <p class="en-language">Hello world</p>
         <p class="de-language">Hallo Welt</p>
@@ -13,7 +13,7 @@
       <div
         class="introduced-person-div"
         [ngClass]="{ 'hidden': !showIntro }"
-        (mouseleave)="isDesktop() && toggleIntro(false)"
+        (mouseleave)="toggleIntro(false)"
       >
       <img
       #wavingHand
@@ -91,8 +91,7 @@
         class="polaroid-photo"
         src="/assets/png/pP_resized.png"
         alt="Foto"
-        [class.color-active]="showPolaroidColor"
-        [class.hover-activated]="isDesktop()"
+        [ngClass]="{ 'color-active': showPolaroidColor }"
       />
     </div>
   </div>

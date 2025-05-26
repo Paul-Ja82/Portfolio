@@ -59,13 +59,15 @@ openGit(): void {
   }, 1000); 
 }
 
-showLinkedinError(): void {
-  const el = document.querySelector('.linkedin-error') as HTMLElement;
-  if (el) {
-    el.style.opacity = '1';
+showLinkedinError(event: Event): void {
+  const link = (event.target as HTMLElement).closest('.footer-div');
+  const errorEl = link?.querySelector('.linkedin-error') as HTMLElement;
+
+  if (errorEl) {
+    errorEl.style.opacity = '1';
 
     setTimeout(() => {
-      el.style.opacity = '0';
+      errorEl.style.opacity = '0';
     }, 1000);
   }
 }

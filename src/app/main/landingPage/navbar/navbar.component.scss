@@ -1,7 +1,11 @@
+body{
+  width: 100%;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
-  padding-inline: clamp(1rem, 5vw, 3rem);
+  padding-inline: clamp(0.75rem, 3.5vw, 2rem);
 }
 
 .desktop {
@@ -237,7 +241,9 @@ main {
 footer {
   display: flex;
   justify-content: space-between;
+  height: 60px;
   width: 168px;
+  position: relative;
 
   .footer-icons {
     display: flex;
@@ -248,11 +254,40 @@ footer {
     border: solid 1px rgba(248, 249, 250, 1);
     border-radius: 50%;
     cursor: pointer;
-
     &:hover {
       border: solid 3px rgba(247, 197, 24, 0.8);
     }
+     &:active{
+      border: solid 3px rgba(247, 197, 24, 0.8);
+    }
   }
+
+  .footer-icons-linkedin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: solid 1px rgba(248, 249, 250, 1);
+  border-radius: 50%;
+  cursor: default;
+
+  &.active-border {
+    border: solid 3px red;
+  }
+
+  .linkedin-error {
+    position: absolute;
+    left: -16px;
+    bottom: 0;
+    color: red;
+    font-size: clamp(0.625rem, 0.515rem + 0.471vw, 0.75rem);
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+}
+
 }
 
 @media (max-width: 374px){
@@ -272,12 +307,14 @@ footer {
 
   .desktop {
     display: block;
-    margin-top: 0;
-
-    main {
+    margin-top: 16px;
+    padding-inline: clamp(0.75rem, 3.5vw, 2rem);
+    max-width: 1440px;
+    .main-desktop {
       margin: 0;
-      padding-inline: clamp(1rem, 5vw, 3rem);
-    }
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
 
     section {
       display: flex;
@@ -303,13 +340,110 @@ footer {
           width: 45px;
          }
 }
+
+p {
+      padding: 10px;
+      margin-bottom: 32px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
     }
 
-    .language-bar-div {
+    .about-me:hover {
+      background-image: url('/assets/svg/aboutmecircle.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .skills:hover {
+      background-image: url('/assets/svg/skillsline.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .projects:hover {
+      background-image: url('/assets/svg/projectsline.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .contact:hover {
+      background-image: url('/assets/svg/contactline.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+
+   .language-bar-div-desk {
+      width: 100px;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 20px;
+      margin-bottom: 0px;
+
+      .language-en-orange {
+        width: 32px;
+        height: 32px;
+        background-image: url('/assets/svg/en-orange.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .language-en {
+        width: 32px;
+        height: 32px;
+        display: none;
+        background-image: url('/assets/svg/en-default.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        cursor: pointer;
+
+        &:hover {
+          background-image: url('/assets/svg/en-hover.svg');
+        }
+      }
+
+      .language-bar-l {
+        width: 33px;
+        height: 16px;
+        background-image: url('/assets/svg/l-bar-lx.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .language-bar-r {
+        width: 33px;
+        height: 16px;
+        display: none;
+        background-image: url('/assets/svg/l-bar-rx.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .language-de {
+        width: 32px;
+        height: 32px;
+        background-image: url('/assets/svg/de-default.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        cursor: pointer;
+
+        &:hover {
+          background-image: url('/assets/svg/de-hover.svg');
+        }
+      }
+
+      .language-de-orange {
+        width: 32px;
+        height: 32px;
+        display: none;
+        background-image: url('/assets/svg/de-orange.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
     }
   }
+  }
 }
+}
+

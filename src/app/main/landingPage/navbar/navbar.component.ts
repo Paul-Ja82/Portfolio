@@ -22,7 +22,7 @@ export class NavbarComponent {
   setTimeout(() => {
     const element = document.getElementById(id);
     if (element) {
-      const yOffset = -100;
+      const yOffset = 0;
       const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
 
       window.scrollTo({ top: y, behavior: 'smooth' }); 
@@ -133,4 +133,25 @@ export class NavbarComponent {
     this.currentLanguage = 'en';
     if (!skipStorage) localStorage.setItem('lang', 'en');
   }
+
+  showLinkedinError(): void {
+  const errorEl = document.querySelector('.linkedin-error') as HTMLElement;
+  const buttonEl = document.querySelector('.footer-icons-linkedin') as HTMLElement;
+
+  if (errorEl && buttonEl) {
+    errorEl.style.opacity = '1';
+    buttonEl.classList.add('active-border');
+
+    setTimeout(() => {
+      errorEl.style.opacity = '0';
+      buttonEl.classList.remove('active-border');
+    }, 1000);
+  }
+}
+
+  openGit(): void {
+  setTimeout(() => {
+    window.open('https://github.com/Paul-Ja82', '_blank');
+  }, 200); 
+}
 }

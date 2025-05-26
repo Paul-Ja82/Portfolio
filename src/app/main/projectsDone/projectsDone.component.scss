@@ -1,13 +1,17 @@
 section {
-    margin-left: 3%;
-    margin-right: 2%;
+  display: flex;
+  justify-content: center;
+  main{
     height: auto;
+    max-width: 1440px;
     font-family: 'Bricolage Grotesque';
+    padding-inline: clamp(0.75rem, 3.5vw, 2rem);
     color: rgba(14, 16, 19, 1);
     margin-bottom: 24px;
     .up-div{
       height: auto;
     }
+}
 }
 
 h2 {

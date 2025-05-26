@@ -1,17 +1,28 @@
 section {
-    background-image: url('/assets/png/Hb-menu-backround.png');
+    width: 100%;
+    background-image: url('/assets/png/Hb-menu-backround - Kopie.png');
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
-    height: auto;
-    min-height: 812px;
+    min-height: 850px;
     font-family: 'Bricolage Grotesque';
     color: rgba(248, 249, 250, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    div{
+        width: 100%;
+      }
   }
 
   @media (min-width: 800px) {
     section{
+      width: 100%;
       min-height: 900px;
+      background-image: url('/assets/png/Hb-menu-backround.png');
+      div{
+        width: 100%;
+        max-width: 1440px;
+      }
     }
   }
 

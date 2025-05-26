@@ -7,7 +7,7 @@
         </div>
     </header>
     <footer>
-       <div class="footer-div">
+<div class="footer-div">
   <img src="assets/svg/Github.svg" class="icon" id="icon-github" />
   <a class="footer-a" (click)="triggerFooterIconAnimation('github');openGit()">GitHub</a>
 </div>
@@ -15,7 +15,7 @@
 <div class="footer-div">
   <img src="assets/svg/Linkedin.svg" class="icon" id="icon-linkedin" />
   <span class="linkedin-error">No Linkedin yet</span>
-  <a class="footer-a" (click)="triggerFooterIconAnimation('linkedin'); showLinkedinError()">Linkedin</a>
+  <a class="footer-a" (click)="triggerFooterIconAnimation('linkedin'); showLinkedinError($event)">Linkedin</a>
 </div>
 
 <div class="footer-div">

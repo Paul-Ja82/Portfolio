@@ -1,10 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  ViewChild,
-  Output,
-  EventEmitter
-} from '@angular/core';
+import { Component, ElementRef, ViewChild, Output, EventEmitter } from '@angular/core';
 import { CommonModule, NgClass } from '@angular/common';
 
 @Component({
@@ -33,47 +27,20 @@ export class LandingMainComponent {
     this.sectionClick.emit();
   }
 
-  isDesktop(): boolean {
-    return window.innerWidth >= 800;
-  }
-
   ngOnInit(): void {
-    this.setupResponsiveIntro();
-    window.addEventListener('resize', this.setupResponsiveIntro.bind(this));
+    this.initIntro();
   }
 
-  setupResponsiveIntro(): void {
-  const isMobile = window.innerWidth < 800;
-  this.useRolling = !isMobile;
+  private initIntro(): void {
+    if (this.introInterval) return;
 
-  if (isMobile) {
-    this.initMobileIntro();
-  } else {
-    this.clearDesktopIntro();
+    setTimeout(() => {
+      this.startInitialIntro();
+      this.startIntroInterval();
+    }, 2500);
   }
-}
 
-private initMobileIntro(): void {
-  if (this.introInterval) return;
-
-  setTimeout(() => {
-    this.startInitialIntro();
-    this.startIntroInterval();
-  }, 2500);
-}
-
-private startInitialIntro(): void {
-  this.toggleIntro(true);
-  this.colorizePolaroid(true);
-
-  setTimeout(() => {
-    this.toggleIntro(false);
-    this.colorizePolaroid(false);
-  }, 4000);
-}
-
-private startIntroInterval(): void {
-  this.introInterval = setInterval(() => {
+  private startInitialIntro(): void {
     this.toggleIntro(true);
     this.colorizePolaroid(true);
 
@@ -81,48 +48,46 @@ private startIntroInterval(): void {
       this.toggleIntro(false);
       this.colorizePolaroid(false);
     }, 4000);
-  }, 8000);
-}
-
-private clearDesktopIntro(): void {
-  if (this.introInterval) {
-    clearInterval(this.introInterval);
-    this.introInterval = null;
   }
-  this.showIntro = false;
-  this.showPolaroidColor = false;
 
-  this.colorizePolaroid(false); 
-}
+  private startIntroInterval(): void {
+    this.introInterval = setInterval(() => {
+      this.toggleIntro(true);
+      this.colorizePolaroid(true);
 
-toggleIntro(state: boolean): void {
-  this.showIntro = state;
-
-  if (state) {
-    this.rotateSvg = false;
-    this.animateIntroText = false;
-
-    requestAnimationFrame(() => {
-      this.rotateSvg = true;
-      this.animateIntroText = true;
-    });
+      setTimeout(() => {
+        this.toggleIntro(false);
+        this.colorizePolaroid(false);
+      }, 4000);
+    }, 8000);
   }
-}
 
-private colorizePolaroid(active: boolean): void {
-  this.showPolaroidColor = active;
-}
+  toggleIntro(state: boolean): void {
+    this.showIntro = state;
 
-   scrollTo(id: string): void {
-  setTimeout(() => {
-    const element = document.getElementById(id);
-    if (element) {
-      const yOffset = +200;
-      const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+    if (state) {
+      this.rotateSvg = false;
+      this.animateIntroText = false;
 
-      window.scrollTo({ top: y, behavior: 'smooth' }); 
+      requestAnimationFrame(() => {
+        this.rotateSvg = true;
+        this.animateIntroText = true;
+      });
     }
-  }, 300);
-}
-  
+  }
+
+  private colorizePolaroid(active: boolean): void {
+    this.showPolaroidColor = active;
+  }
+
+  scrollTo(id: string): void {
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        const yOffset = +200;
+        const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }, 300);
+  }
 }

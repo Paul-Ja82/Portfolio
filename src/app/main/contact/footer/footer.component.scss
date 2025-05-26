@@ -1,6 +1,5 @@
 section {
   margin-top: 40px;
-  padding-inline: clamp(1rem, 5vw, 3rem);
   font-family: 'Bricolage Grotesque';
   color: rgba(248, 249, 250, 1);
 
@@ -49,8 +48,6 @@ section {
 
   footer {
     margin-top: 16px;
-    margin-left: 2%;
-    margin-right: 2%;
     padding-bottom: 20px;
     display: flex;
     justify-content: space-between;

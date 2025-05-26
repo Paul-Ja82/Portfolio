@@ -1,322 +1,321 @@
 section {
+  width: 100%;
+  height: auto;
+  min-height: 1300px;
+  padding-top: 80px;
+  padding-inline: clamp(0.75rem, 3.5vw, 2rem);
+  background: url('/assets/png/turned-backround - Kopie.png') no-repeat center / cover;
+  font-family: 'Bricolage Grotesque';
+  color: rgba(248, 249, 250, 1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+
+  footer {
     width: 100%;
-    padding-top: 80px;
-    background-image: url('/assets/png/turned-backround.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: auto;
-    font-family: 'Bricolage Grotesque';
-    color: rgba(248, 249, 250, 1);
-    position: relative;
+    max-width: 1440px;
+  }
 }
 
 main {
-    margin-left: 3%;
-    margin-right: 2%;
-    margin-top: 80px;
-    h2{
-        font-size: clamp(1.125rem, 1.081rem + 0.188vw, 1.25rem);
-        font-weight: 500;
-    }
-    h1{
-        margin-top: 0;
-        margin-bottom: 30px;
-        font-size: clamp(3rem, 2.648rem + 1.502vw, 4rem);
-    }
+  max-width: 1440px;
+  margin-top: 80px;
 
-    p{
-        font-size: 18px;
-    }
+  h2 {
+    font-size: clamp(1.125rem, 1.081rem + 0.188vw, 1.25rem);
+    font-weight: 500;
+  }
+
+  h1 {
+    margin: 0 0 30px 0;
+    font-size: clamp(3rem, 2.648rem + 1.502vw, 4rem);
+  }
+
+  p {
+    font-size: 18px;
+  }
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    margin-top: 60px;
-    margin-right: 2%;
-    margin-left: 2%;
+  display: flex;
+  flex-direction: column;
+  margin: 60px 2% 0;
+
+  .divider-yellow {
+    height: 1px;
+    width: 100%;
+    margin: 16px 0;
+    background-color: rgba(247, 197, 24, 0.5);
+  }
+
+  label {
+    margin-left: 4%;
+    margin-bottom: 16px;
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  input,
+  textarea {
+    width: 96%;
+    margin-left: 4%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    resize: none;       
+    overflow: hidden;     
+    height: 30px;   
+    font-size: 18px;
     color: rgba(248, 249, 250, 1);
-    .divider-yellow{
-        height: 1px;
-        width: 100%;
-        margin-top: 16px;
-        margin-bottom: 16px;
-        background-color:rgba(247, 197, 24, 0.5);
-    }
 
-    label {
-        margin-left: 4%;
-        margin-bottom: 16px;
-        font-size: 24px;
-        font-weight: 500;
-        
-      }
-
-      input:-webkit-autofill,
-      input:-webkit-autofill:hover,
-      input:-webkit-autofill:focus,
-      input:-webkit-autofill:active {
-      -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
-      -webkit-text-fill-color: rgba(248, 249, 250, 1) !important;
-      transition: background-color 9999s ease-in-out 0s; 
-     }
-
- 
-      input {
-        width: 96%; 
-        margin-left: 4%;
-        background-color: transparent;
-        border: none;
-        outline: none;
-        color: rgba(248, 249, 250, 1);
-        &::placeholder {
-          margin-top: 16px;
-          font-size: 18px;
-          font-weight: 400; 
-          color: rgba(248, 249, 250, 1);
-        }
-        &:focus {
-          background-color: transparent;
-          color: rgba(248, 249, 250, 1);
-        }        
-      }
-
-      .name-miss{
-        display: none;
-        &::placeholder {
-          margin-top: 16px;
-          font-size: 18px;
-          font-weight: 400;
-          display: block; 
-          color:rgba(255, 58, 0, 1);
-        }
-      }
-
-      .mail-miss{
-        display: none;
-        &::placeholder {
-          margin-top: 16px;
-          font-size: 18px;
-          font-weight: 400;
-          display: block; 
-          color:rgba(255, 58, 0, 1);
-        }
-      }
-
-      .msg-miss{
-        display: none;
-        &::placeholder {
-          margin-top: 16px;
-          font-size: 18px;
-          font-weight: 400;
-          display: block; 
-          color:rgba(255, 58, 0, 1);
-        }
-      }
-
-    .check-box-label {
-          display: flex; 
-          align-items:start; 
-          cursor: pointer; 
-          margin-left: 0px;
-          margin-top: 24px;
-    }  
-
-    .custom-checkbox {
-      width: 40px;
-      height: 18px;
-      margin-left: 0px;
-      appearance: none;
-      -webkit-appearance: none;
-      border: none;
-      outline: none;
-      background-image: url('/assets/svg/check-box.svg');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: top;
-      transition: background-image 0.2s ease;
-      &:hover{
-        cursor: pointer;
-        background-image: url('/assets/svg/check-box-hover.svg');
-      }
-      &:active{
-        background-image: url('/assets/svg/check-box-activ.svg');
-      }
-      &:checked{
-        background-image: url('/assets/svg/check-box-checked.svg');
-      }
-    }
-
-    span {
-      font-size: 15px;
+    &::placeholder {
+      margin-top: 16px;
+      font-family: 'Bricolage Grotesque';
+      font-size: 18px;
+      font-weight: 400;
       color: rgba(248, 249, 250, 1);
-      margin-bottom: 0;
-      .privacy-link{
-        color: rgba(51, 85, 255, 1);
-        text-decoration: none;
-        &:hover{
-          color: rgba(247, 197, 24, 1);
-        }
-      }
     }
 
-    .forget-box {
-      margin-top: 2px;
-      margin-bottom: 0px;
-      font-size: 15px;
+    &.error::placeholder {
       color: rgba(255, 58, 0, 1);
-      opacity: 0;
     }
-  
-      .form-button-div{
-        display: flex;
-        align-items: center;
-        margin-top: 24px;
 
-        .zigzag-arrow {
-          width: 80px;
-          height: 24px;
-          max-width: 160px;
-          margin-top: 0;
-          overflow: hidden;
-          opacity: 0;
-
-          &.animate-arrow {
-            animation: slideLine 4s ease-in-out infinite;
-            opacity: 1;
-          }
-        }
-        
-        @keyframes slideLine {
-          0% {
-            width: 80px;
-          }
-          16% {
-            width: 150px;
-          }
-          84% {
-            width: 150px;
-          }
-          100% {
-            width: 80px;
-          }
-        }
-        
-          } 
-
-       .sent-msg, .sent-msg-de{
-        width: 100%;
-        height: 8px;
-        display: flex;
-        justify-content: right;
-        align-items: center;
-        gap: 8px;
-        font-size: clamp(1rem, 0.273rem + 3.636vw, 1.125rem);
-        color: rgb(65, 241, 65);
-        text-shadow:  rgb(3, 3, 3) 0.8px 0.8px 0;
-        animation: pulseText 1.5s ease-in-out infinite;
-        opacity: 0;
-        @keyframes pulseText {
-        0%   { transform: scale(1); }
-        50%  { transform: scale(1.05); }
-        100% { transform: scale(1); }
-}
-        img{
-          transform: rotate(16deg);
-        }
-       }
-    
-       button {
-           width: 156px;
-           height: 40px;
-           margin-right: 1%;
-           background-color: transparent;
-           border: 1px solid rgba(248, 249, 250, 1);
-           color: rgba(248, 249, 250, 1);
-           border-radius: 100px;
-           box-shadow: 2px 4px 0 0 rgba(248, 249, 250, 1);
-           font-size: 18px;
-           font-weight: 500;
-           display: flex;
-           justify-content: center;
-           align-items: center;
-           position: absolute;
-           right: 4%;
-        &:hover{
-          cursor: pointer;
-          background-color: rgba(248, 122, 85, 1);
-        }
-        &:active {
-          cursor: pointer;
-          box-shadow: none;
-          background-color: rgba(248, 122, 85, 1);
-          transform: translate(2px, 4px);
-          border: none;
-        }
-        &:disabled {
-          cursor: default;
-          pointer-events: none;
-          border: 1px solid gray;
-          color: gray;
-          box-shadow: 2px 4px 0 0 gray;
-        }
-}
-}
-
-@media (max-width: 370px){
-  form{
-    .form-button-div{
-      .zigzag-arrow {
-          width: 60px;
-          height: 24px;
-          max-width: 110px;
-          margin-top: 0;
-          overflow: hidden;
-          opacity: 0;
-
-          &.animate-arrow {
-            animation: slideLine 4s ease-in-out infinite;
-            opacity: 1;
-          }
-        }
-        
-        @keyframes slideLine {
-          0% {
-            width: 60px;
-          }
-          16% {
-            width: 110px;
-          }
-          84% {
-            width: 110px;
-          }
-          100% {
-            width: 60px;
-          }
-        }
-        
-          } 
+    &:focus {
+      background-color: transparent;
+      color: rgba(248, 249, 250, 1);
     }
   }
+
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+    -webkit-text-fill-color: rgba(248, 249, 250, 1) !important;
+    transition: background-color 9999s ease-in-out 0s;
+  }
+
+  .check-box-label {
+    display: flex;
+    align-items: start;
+    margin-top: 24px;
+    margin-left: 0;
+  }
+
+  .custom-checkbox {
+    width: 40px;
+    height: 20px;
+    margin-left: 0;
+    appearance: none;
+    border: none;
+    outline: none;
+    background-image: url('/assets/svg/check-box.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+    transition: background-image 0.2s ease;
+    cursor: pointer;
+
+    &:hover {
+      background-image: url('/assets/svg/check-box-hover.svg');
+    }
+
+    &:active {
+      background-image: url('/assets/svg/check-box-activ.svg');
+    }
+
+    &:checked {
+      background-image: url('/assets/svg/check-box-checked.svg');
+    }
+  }
+
+  span {
+    font-size: 15px;
+    margin-top: 2px;
+    color: rgba(248, 249, 250, 1);
+
+    .privacy-link {
+      color: rgba(51, 85, 255, 1);
+      text-decoration: none;
+
+      &:hover {
+        color: rgba(247, 197, 24, 1);
+      }
+    }
+  }
+
+  .forget-box {
+    margin-top: 2px;
+    font-size: 15px;
+    color: rgba(255, 58, 0, 1);
+    opacity: 0;
+  }
+
+  .form-button-div {
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+    position: relative;
+
+    .zigzag-arrow {
+      width: 80px;
+      height: 24px;
+      max-width: 160px;
+      overflow: hidden;
+      opacity: 0;
+
+      &.animate-arrow {
+        animation: slideLine 4s ease-in-out infinite;
+        opacity: 1;
+      }
+    }
+  }
+
+  .sent-msg,
+  .sent-msg-de {
+    width: 100%;
+    height: 8px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    font-size: clamp(1rem, 0.273rem + 3.636vw, 1.125rem);
+    color: rgb(65, 241, 65);
+    text-shadow: rgb(3, 3, 3) 0.8px 0.8px 0;
+    animation: pulseText 1.5s ease-in-out infinite;
+    opacity: 0;
+
+    img {
+      transform: rotate(16deg);
+    }
+  }
+
+  button {
+    width: 156px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid rgba(248, 249, 250, 1);
+    color: rgba(248, 249, 250, 1);
+    border-radius: 100px;
+    box-shadow: 2px 4px 0 0 rgba(248, 249, 250, 1);
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(248, 122, 85, 1);
+    }
+
+    &:active {
+      box-shadow: none;
+      background-color: rgba(248, 122, 85, 1);
+      transform: translate(2px, 4px);
+      border: none;
+    }
+
+    &:disabled {
+      pointer-events: none;
+      border: 1px solid gray;
+      color: gray;
+      box-shadow: 2px 4px 0 0 gray;
+    }
+  }
+}
+
+@keyframes slideLine {
+  0% {
+    width: 80px;
+  }
+  16% {
+    width: 150px;
+  }
+  84% {
+    width: 150px;
+  }
+  100% {
+    width: 80px;
+  }
+}
+
+@keyframes pulseText {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 370px) {
+  form {
+    .zigzag-arrow {
+      width: 60px;
+      max-width: 110px;
+
+      &.animate-arrow {
+        animation: slideLineMobile 4s ease-in-out infinite;
+        opacity: 1;
+      }
+    }
+  }
+
+  @keyframes slideLineMobile {
+    0% {
+      width: 60px;
+    }
+    16% {
+      width: 110px;
+    }
+    84% {
+      width: 110px;
+    }
+    100% {
+      width: 60px;
+    }
+  }
+}
 
 @media (min-width: 800px) {
-
   section {
     width: 100%;
-    min-height: 600px;
+    height: auto;
+    min-height: 900px;
+    padding-top: 80px;
     padding-bottom: 20px;
-  }
-  
-  main {
+    padding-inline: clamp(0.75rem, 3.5vw, 2rem);
+    background: url('/assets/png/turned-backround.png') no-repeat center / cover;
+    font-family: 'Bricolage Grotesque';
+    color: rgba(248, 249, 250, 1);
+    position: relative;
     display: flex;
-    justify-content: space-between;
-    margin-left: 4%;
-    margin-right: 4%;
-    .up-div{
-      width: 45%;
-    }
-    .down-div{
-      width: 45%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+
+    main {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 4%;
+
+      .up-div,
+      .down-div {
+        width: 45%;
+      }
+
+      form {
+        span {
+          font-size: 15px;
+          margin-top: 5px;
+          color: rgba(248, 249, 250, 1);
+        }
+      }
     }
   }
 }

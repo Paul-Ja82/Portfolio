@@ -1,7 +1,7 @@
 section {
-  width: auto;
+  width: 100%;
   height: auto;
-  padding-inline: clamp(1rem, 5vw, 3rem);
+  padding-inline: clamp(0.75rem, 3.5vw, 2rem);  
 }
 
 .waving-hand {
@@ -72,16 +72,14 @@ p {
   transform: translateX(-30px);
 }
 
-.title-div {
-  width: 100%;
+.title-div { 
   margin-top: 30px;
 }
 
 h1 {
-  font-size: clamp(3.375rem, 1.835rem + 6.573vw, 7.75rem);
+  font-size:clamp(3.125rem, 1.408rem + 7.324vw, 8rem);
   font-weight: 700;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .letter-big,
@@ -213,7 +211,7 @@ h1 {
   .title-div {
     margin-left: 0 !important;
     margin-right: 0!important;
-    max-width: 90%;
+    max-width: 100%;
   }
 
 .polaroid-frame {
@@ -223,7 +221,7 @@ h1 {
 
 .polaroid-photo {
   position: absolute;
-  top: 6%;
+  top: 5%;
   left: 3%;
   width: 94%;
   height: 71%;
@@ -240,17 +238,16 @@ h1 {
 
 @media (min-width: 800px) {
   section {
-    min-height: 67vh;
-    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: auto;
+    max-width: 1440px;
   }
 
   .title-div {
     position: relative;
-    width: 80%;
-    margin-top: 150px;
+    margin-top: 130px;
     margin-left: clamp(0rem, -8.491rem + 9.434vw, 6.25rem);
   }
 
@@ -292,16 +289,10 @@ h1 {
 
   .polaroid-frame {
     position: absolute;
-    top: 0;
+    top: -2px;
     left: clamp(23.75rem, 6.511rem + 35.821vw, 38.75rem);
     margin-top: -40px;
     margin-left: 0;
-    .polaroid-photo {
-       &:hover {
-      filter: grayscale(0%) brightness(1.2);
-      cursor: default;
-    }
-    }
   }
 
   .title-developer {
@@ -311,11 +302,6 @@ h1 {
   .touch-button-div {
     width: 100%;
     display: flex;
-    justify-content: end;
-
-    .touch-button {
-      margin-left: 0;
-      margin-right: clamp(1.25rem, -11.641rem + 25.781vw, 11.563rem);
-    }
+    justify-content: right;
   }
 }
