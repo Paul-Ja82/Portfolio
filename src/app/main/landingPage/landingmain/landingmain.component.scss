@@ -137,7 +137,7 @@ h1 {
   height: 244px;
   margin-top: 50px;
   margin-left: 20%;
-  background-image: url('/assets/png/foto-container.png');
+  background-image: url('/assets/png/foto-container.webp');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -205,16 +205,17 @@ h1 {
    section {
     display: flex;
     justify-content: center;
-    padding-inline: 1rem;
   }
 
   .title-div {
+    width: 100%;
+    margin-top: 2vh;
     margin-left: 0 !important;
     margin-right: 0!important;
-    max-width: 100%;
   }
 
 .polaroid-frame {
+  margin-top: 3vh;
   width: 180px;
   margin-left: 18%;
 }
@@ -234,6 +235,12 @@ h1 {
   font-weight: 400;
 }
 
+}
+
+@media (max-width: 500px) {
+  .title-div {
+    margin-top: 5vh;
+  }
 }
 
 @media (min-width: 800px) {

@@ -16,12 +16,11 @@
         (mouseleave)="toggleIntro(false)"
       >
       <img
-      #wavingHand
-      src="/assets/svg/waving_hand.svg"
-      class="waving-hand"
-      [class.animate-rotation]="rotateSvg && !useRolling"
-      [class.animate-rolling]="rotateSvg && useRolling"
-    />    
+        src="/assets/svg/waving_hand.svg"
+        class="waving-hand"
+        [class.animate-rotation]="rotateSvg"
+        [class.animate-rolling]="useRolling"
+      />  
         <div class="introduced-person" [class.guillotine-in]="animateIntroText">
           <p class="en-language">I'M PAUL DIETRICH</p>
           <p class="de-language">ICH BIN PAUL DIETRICH</p>

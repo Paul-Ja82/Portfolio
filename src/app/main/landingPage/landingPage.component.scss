@@ -1,6 +1,6 @@
 section {
     width: 100%;
-    background-image: url('/assets/png/Hb-menu-backround - Kopie.png');
+    background-image: url('/assets/png/backround-mobile.webp');
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 850px;
@@ -14,11 +14,22 @@ section {
       }
   }
 
+  @media (max-width: 374px) {
+    section {
+    width: 100%;
+    background-image: url('/assets/png/backround-mobile.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 680px;
+    
+  }
+}
+
   @media (min-width: 800px) {
     section{
       width: 100%;
       min-height: 900px;
-      background-image: url('/assets/png/Hb-menu-backround.png');
+      background-image: url('/assets/png/Hb-menu-backround.webp');
       div{
         width: 100%;
         max-width: 1440px;

@@ -20,44 +20,51 @@
 
     <div class="down-div">
       <div class="contact-form" #contactFormWrapper>
+
         <div class="en-language">
           <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
 
-            <label>What's your name?</label>
-            <input
-              [class.error]="invalidName"
-              #nameRef
-              type="text"
-              name="name"
-              [(ngModel)]="contactData.name"
-              [attr.placeholder]="invalidName ? 'Oops! Your name is missing (Only A..Z)' : 'Your name goes here'"
-              required
-            />
+            <label>What's your name?
+              <input
+                [class.error]="invalidName"
+                #nameRef
+                type="text"
+                name="name"
+                [(ngModel)]="contactData.name"
+                [attr.placeholder]="invalidName ? 'Oops! Your name is missing' : 'Your name goes here'"
+                required
+                autocomplete="on"
+              />
+            </label>
             <div class="divider-yellow"></div>
 
-            <label>What's your email?</label>
-            <input
-              [class.error]="invalidEmail"
-              #emailRef
-              type="email"
-              name="email"
-              [(ngModel)]="contactData.email"
-              [attr.placeholder]="invalidEmail ? 'Hoppla! Your valid email is required' : 'youremail@email.com'"
-              required
-              pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-            />
+            <label>What's your email?
+              <input
+                [class.error]="invalidEmail"
+                #emailRef
+                type="email"
+                name="email"
+                [(ngModel)]="contactData.email"
+                [attr.placeholder]="invalidEmail ? 'Hoppla! Your valid email is required' : 'youremail@email.com'"
+                required
+                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                autocomplete="on"
+              />
+            </label>
             <div class="divider-yellow"></div>
 
-            <label>How can I help you?</label>
-            <textarea
-              [class.error]="invalidMessage"
-              #messageRef
-              name="message"
-              [(ngModel)]="contactData.message"
-              [attr.placeholder]="invalidMessage ? 'What do you need to develop?' : 'Hello Paul, I am interested...'"
-              minlength="2"
-              required
-            ></textarea>
+            <label>How can I help you?
+              <textarea
+                [class.error]="invalidMessage"
+                #messageRef
+                name="message"
+                [(ngModel)]="contactData.message"
+                [attr.placeholder]="invalidMessage ? 'What do you need to develop?' : 'Hello Paul, I am interested...'"
+                minlength="2"
+                required
+                autocomplete="on"
+              ></textarea>
+            </label>
             <div class="divider-yellow"></div>
 
             <label class="check-box-label">
@@ -80,7 +87,7 @@
               Message sent <img src="/assets/svg/Mail.svg" />
             </div>
 
-            <div class="form-button-div" (click)="handleInvalidClick(checkboxRefEn.checked)">
+            <div class="form-button-div" (click)="handleInvalidClick(contactForm, checkboxRefEn.checked)">
               <img
                 class="zigzag-arrow"
                 src="/assets/svg/arrow-zig-zag.svg"
@@ -91,47 +98,51 @@
 
           </form>
         </div>
+
         <div class="de-language">
           <form #formDe="ngForm" (ngSubmit)="onSubmit(formDe)">
 
-            <label>Wie heißt du?</label>
-            <input
-              [class.error]="invalidName"
-              #nameRefDe
-              type="text"
-              name="name"
-              [(ngModel)]="contactData.name"
-              [attr.placeholder]="invalidName ? 'Ups! Dein Name fehlt (Nur A..Z)' : 'Dein Name hier'"
-              required
-              autocomplete="off"
-            />
+            <label>Wie heißt du?
+              <input
+                [class.error]="invalidName"
+                #nameRefDe
+                type="text"
+                name="name"
+                [(ngModel)]="contactData.name"
+                [attr.placeholder]="invalidName ? 'Ups! Dein Name fehlt' : 'Dein Name hier'"
+                required
+                autocomplete="on"
+              />
+            </label>
             <div class="divider-yellow"></div>
 
-            <label>Deine E-Mail-Adresse?</label>
-            <input
-              [class.error]="invalidEmail"
-              #emailRefDe
-              type="email"
-              name="email"
-              [(ngModel)]="contactData.email"
-              [attr.placeholder]="invalidEmail ? 'Hoppla! Deine gültige E-Mail ist erforderlich' : 'deine@email.de'"
-              required
-              pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-              autocomplete="off"
-            />
+            <label>Deine E-Mail-Adresse?
+              <input
+                [class.error]="invalidEmail"
+                #emailRefDe
+                type="email"
+                name="email"
+                [(ngModel)]="contactData.email"
+                [attr.placeholder]="invalidEmail ? 'Hoppla! Deine gültige E-Mail ist erforderlich' : 'deine@email.de'"
+                required
+                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                autocomplete="on"
+              />
+            </label>
             <div class="divider-yellow"></div>
 
-            <label>Wie kann ich dir helfen?</label>
-            <textarea
-              [class.error]="invalidMessage"
-              #messageRefDe
-              name="message"
-              [(ngModel)]="contactData.message"
-              [attr.placeholder]="invalidMessage ? 'Worum geht’s genau?' : 'Hallo Paul, ich interessiere mich für...'"
-              minlength="2"
-              required
-              autocomplete="off"
-            ></textarea>
+            <label>Wie kann ich dir helfen?
+              <textarea
+                [class.error]="invalidMessage"
+                #messageRefDe
+                name="message"
+                [(ngModel)]="contactData.message"
+                [attr.placeholder]="invalidMessage ? 'Worum geht’s genau?' : 'Hallo Paul, mich interessiert...'"
+                minlength="2"
+                required
+                autocomplete="on"
+              ></textarea>
+            </label>
             <div class="divider-yellow"></div>
 
             <label class="check-box-label">
@@ -154,7 +165,7 @@
               Ok gesendet <img src="/assets/svg/Mail.svg" />
             </div>
 
-            <div class="form-button-div" (click)="handleInvalidClick(checkboxRefDe.checked)">
+            <div class="form-button-div" (click)="handleInvalidClick(formDe, checkboxRefDe.checked)">
               <img
                 class="zigzag-arrow"
                 src="/assets/svg/arrow-zig-zag.svg"

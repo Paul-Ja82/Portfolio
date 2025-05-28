@@ -1,9 +1,9 @@
 section {
-    background-image: url('/assets/png/Hb-menu-backround.png');
+    background-image: url('/assets/png/backround-mobile.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 1350px;
+    height: 1300px;
     font-family: 'Bricolage Grotesque';
     color: rgba(248, 249, 250, 1);
     main{
@@ -229,6 +229,7 @@ header{
 
     section{
         height: 950px;
+        background-image: url('/assets/png/Hb-menu-backround.webp');
         display: flex;
         justify-content: center;
     }

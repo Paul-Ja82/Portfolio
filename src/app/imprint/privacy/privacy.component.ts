@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
 
@@ -11,4 +12,13 @@ import { RouterModule, Router } from '@angular/router';
 })
 export class PrivacyComponent {
 
+
+  constructor(private meta: Meta) {}
+
+  ngOnInit(): void {
+    this.meta.addTag({
+      name: 'robots',
+      content: 'noindex, nofollow'
+    });
+  }
 }

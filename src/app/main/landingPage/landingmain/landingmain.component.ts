@@ -11,7 +11,7 @@ import { CommonModule, NgClass } from '@angular/common';
 export class LandingMainComponent {
   showIntro = false;
   rotateSvg = false;
-  useRolling = true;
+  useRolling = false;
   animateIntroText = false;
   showPolaroidColor = false;
   private introInterval: any;
@@ -27,9 +27,20 @@ export class LandingMainComponent {
     this.sectionClick.emit();
   }
 
-  ngOnInit(): void {
-    this.initIntro();
+ ngOnInit(): void {
+  const isWideScreen = window.innerWidth > 800;
+
+  if (isWideScreen) {
+    this.useRolling = true;
+    this.rotateSvg = true;
+  } else {
+    this.useRolling = false;
+    this.rotateSvg = false;
   }
+
+  this.initIntro();
+}
+
 
   private initIntro(): void {
     if (this.introInterval) return;

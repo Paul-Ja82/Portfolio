@@ -14,7 +14,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ContactComponent {
 
-   http = inject(HttpClient);
+  http = inject(HttpClient);
 
   contactData = {
     name: '',
@@ -58,20 +58,32 @@ export class ContactComponent {
     }
   }
 
-  handleInvalidClick(isChecked: boolean): void {
-    const nameValid = /^[A-Za-z\s\-']+$/.test(this.contactData.name.trim());
-    const emailValid = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/.test(this.contactData.email.trim());
-    const messageValid = this.contactData.message.trim().length >= 2;
-    const forgetBox = document.getElementById('forgetBox') as HTMLElement | null;
+  handleInvalidClick(form: NgForm, isChecked: boolean): void {
+  Object.keys(form.controls).forEach((key) => {
+    const control = form.controls[key];
+    control?.markAsTouched({ onlySelf: true });
+    control?.markAsDirty({ onlySelf: true });
+    control?.updateValueAndValidity({ onlySelf: true });
+  });
 
-    this.invalidName = !nameValid;
-    this.invalidEmail = !emailValid;
-    this.invalidMessage = !messageValid;
+  const nameControl = form.controls['name'];
+  const emailControl = form.controls['email'];
+  const messageControl = form.controls['message'];
 
-    if (forgetBox) {
-      forgetBox.style.opacity = isChecked ? '0' : '1';
-    }
+  this.invalidName = nameControl?.invalid || false;
+  this.invalidEmail = emailControl?.invalid || false;
+  this.invalidMessage = messageControl?.invalid || false;
+
+  if (this.invalidName) this.contactData.name = '';
+  if (this.invalidEmail) this.contactData.email = '';
+  if (this.invalidMessage) this.contactData.message = '';
+
+  const forgetBox = document.getElementById('forgetBox') as HTMLElement | null;
+  if (forgetBox) {
+    forgetBox.style.opacity = isChecked ? '0' : '1';
   }
+}
+
 
   onCheckboxChange(isChecked: boolean): void {
     const forgetBox = document.getElementById('forgetBox') as HTMLElement | null;
@@ -137,4 +149,10 @@ export class ContactComponent {
     const forgetBox = document.getElementById('forgetBox') as HTMLElement | null;
     if (forgetBox) forgetBox.style.opacity = '0';
   }
+
+  removeReadonly(event: Event): void {
+  const input = event.target as HTMLInputElement;
+  input.removeAttribute('readonly');
+}
+
 }
