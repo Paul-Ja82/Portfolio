@@ -251,6 +251,10 @@ footer {
   }
 }
 
+.privacy-navbar{
+  display: none;
+}
+
 @media (min-width:800px) {
   .mobile {
     display: none;
@@ -285,6 +289,11 @@ footer {
       margin-top: 20px;
     }
   }
+
+  .privacy-navbar{
+    display: block;
+    width: 100%;
+  }
 }
 
 @media (max-width: 880px){
@@ -292,6 +301,13 @@ footer {
       padding-left: 8px;
       padding-right: 8px;
       background-color: rgba(5, 5, 5);
+      border-radius: 20px;
+    }
+
+    .privacy-navbar .language-bar-div{
+      padding-left: 8px;
+      padding-right: 8px;
+      background-color: transparent;
       border-radius: 20px;
     }
 }
@@ -304,6 +320,14 @@ footer {
       }
     }
   }
+
+  .privacy-navbar section {
+    .desktop-nav {
+      .contact {
+        color: rgba(248, 249, 250, 1);
+      }
+    }
+  }
 }
 
 @media (max-width: 1080px) {
@@ -311,6 +335,14 @@ footer {
     .desktop-nav {
       .projects {
         color: black;
+      }
+    }
+  }
+
+  .privacy-navbar section {
+    .desktop-nav {
+      .projects {
+        color: rgba(248, 249, 250, 1);
       }
     }
   }

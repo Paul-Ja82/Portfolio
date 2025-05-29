@@ -1,11 +1,11 @@
 <div class="mobile">
-    <nav>
+    <nav [ngClass]="theme">
       <div class="logo"><img class="blue" src="/assets/png/logo.png"><img class="yellow" src="/assets/png/logo-hover.png"></div>
       <button (click)="showMenu()"></button>
     </nav>
   </div>
   
-  <div class="desktop">
+  <div class="desktop" [ngClass]="theme">
     <main>
       <section>
         <div class="logo" [routerLink]="['/Main']"><img class="blue" src="/assets/png/logo.png"><img class="yellow" src="/assets/png/logo-hover.png"></div>

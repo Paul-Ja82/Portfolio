@@ -23,14 +23,31 @@
   font-size: clamp(1rem, 0.446rem + 2.768vw, 2.938rem);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h3,
+h4,
+h5,
+h6 {
   font-weight: bold;
   margin: 0.5em 0;
 }
 
+h1 {
+  margin-top: 16px;
+  margin-left: 10px;
+  margin-bottom: 16px;
+  color: rgba(51, 85, 255, 1);
+  font-size: 24px;
+
+  &:hover {
+    cursor: pointer;
+    color: rgba(247, 197, 24, 1);
+  }
+}
+
 h2 {
   font-size: clamp(2.375rem, 1.964rem + 2.054vw, 3.813rem);
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 h3 {
@@ -42,10 +59,19 @@ h4 {
 }
 
 #contentContainer {
-  padding: 3em 1em;
-  background-color: rgb(248, 236, 221);
+  padding: 1em;
+  color: rgba(248, 249, 250, 1);
+  background-color: rgb(36, 35, 35);
   font-family: 'Bricolage Grotesque';
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text {
+  margin-left: 4%;
+  margin-right: 4%;
 }
 
 .titleSelection {
@@ -53,31 +79,61 @@ h4 {
   justify-content: space-between;
   align-items: start;
   position: relative;
+}
 
-  .button-back {
-    height: 18px;
-    font-size: 18px;
-    position: absolute;
-    top: 16px;
-    right: 0;
-    font-weight: 700;
-    color: black;
-    background-color: transparent;
-    border: none;
-    display: flex;
-    align-items: center;
+.leyout-div{
+  max-width: 1440px;
+}
 
-    &:hover {
-      cursor: pointer;
-      color: rgb(249, 136, 102);
-      text-shadow: rgb(12, 12, 12) 2px 1px 0;
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  h1{
+    margin-left: 0;
+  }
+}
+
+.x {
+  margin-top: 0;
+  font-size: 20px;
+  margin-right: 2%;
+  color: rgba(248, 249, 250, 1);
+  border: none;
+  background-color: transparent;
+  display: block;
+
+  &:hover {
+    cursor: pointer;
+    color: rgba(247, 197, 24, 1);
+  }
+}
+
+@media (min-width: 800px) {
+  header {
+    display: none;
+  }
+}
+
+@media (max-width: 850px) {
+  section {
+    .desktop-nav {
+      .contact {
+        color: rgba(248, 249, 250, 1);
+      }
     }
   }
 }
 
-.text {
-  margin-left: 116px;
-  margin-right: 10%;
+
+@media (max-width: 1080px) {
+  section {
+    .desktop-nav {
+      .projects {
+        color: black;
+      }
+    }
+  }
 }
 
 @media (min-width: 1011px) {
@@ -103,9 +159,9 @@ h4 {
   }
 
   .text {
-    margin-left: 4%;
-    margin-right: 2%;
-    padding-bottom: 40px;
+    margin-left: 6%;
+    margin-right: 4%;
+    padding-bottom: 20px;
   }
 }
 

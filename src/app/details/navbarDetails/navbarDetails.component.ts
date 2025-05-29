@@ -13,6 +13,7 @@ export class NavbarDetailsComponent {
   @Input() menuOpen = false;
   @Output() openMenu = new EventEmitter<void>();
   @Output() closeMenu = new EventEmitter<void>();
+  @Input() theme: string = '';
 
   currentLanguage: 'en' | 'de' = 'en';
 

@@ -2,18 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
-
+import { NavbarDetailsComponent } from '../../details/navbarDetails/navbarDetails.component';
+import { FooterComponent } from '../../main/contact/footer/footer.component';
 @Component({
   selector: 'app-legal',
   standalone: true,
-  imports: [CommonModule, RouterModule],  
+  imports: [CommonModule, RouterModule, FooterComponent, NavbarDetailsComponent],  
   templateUrl: './legal.component.html',
   styleUrl: './legal.component.scss'
 })
 export class LegalComponent {
-
-
-  constructor(private meta: Meta) {}
+ constructor(private meta: Meta) {}
 
   ngOnInit(): void {
     this.meta.addTag({
@@ -21,4 +20,16 @@ export class LegalComponent {
       content: 'noindex, nofollow'
     });
   }
+
+  goTo(id: string): void {
+  setTimeout(() => {
+    const element = document.getElementById(id);
+    if (element) {
+      const yOffset = +700;
+      const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+
+      window.scrollTo({ top: y}); 
+    }
+  }, 100);
+}
 }

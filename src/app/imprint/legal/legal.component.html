@@ -1,9 +1,14 @@
 <section>
+  
+      <app-navbarDetails theme="privacy-navbar"></app-navbarDetails>
   <div class="en-language">
     <div class="text">
+    <header>
+    <h1>PD</h1>
+    <button class="x" (click)="goTo('contact')" [routerLink]="['/Main']">X</button>
+    </header>
         <div class="titleSelection">
           <h2>Legal Notice</h2>
-          <button class="button-back"  [routerLink]="['/Main']"><img class="arrow-back" src="/assets/svg/arrow-back.svg"> Go Back </button>
         </div>
         <article>
           <h3 class="imprintTitle">Imprint</h3>
@@ -84,16 +89,17 @@
             Notice. <br><br> For any questions or notices, please contact us at mail&#64;pauljdietrich.com. <br><br> Date: May 24, 2025
           </p>
         </article>
+        <app-footer></app-footer>
       </div>
   </div>
   <div class="de-language">
   <div class="text">
+    <header>
+    <h1>PD</h1>
+    <button class="x" (click)="goTo('contact')" [routerLink]="['/Main']">X</button>
+    </header>
     <div class="titleSelection">
       <h2>Impressum</h2>
-      <button class="button-back" [routerLink]="['/Main']">
-        <img class="arrow-back" src="/assets/svg/arrow-back.svg" />
-        Zurück
-      </button>
     </div>
 
     <article>
@@ -176,6 +182,7 @@
         Stand: 24. Mai 2025
       </p>
     </article>
+    <app-footer></app-footer>
   </div>
-</div>
+  </div>
 </section>

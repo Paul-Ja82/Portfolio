@@ -1,9 +1,15 @@
 <main id="contentContainer" class="bg-main">
+  <div class="leyout-div">
+  
+  <app-navbarDetails theme="privacy-navbar"></app-navbarDetails>
   <div class="de-language">
     <div class="text">
-     <div class="titleSelection">
+      <header>
+      <h1>PD</h1>
+      <button class="x" (click)="goTo('contact')" [routerLink]="['/Main']">X</button>
+      </header>
+      <div class="titleSelection">
        <h2 class="privacyPolicyTitle">Privacy Policy</h2>
-       <button class="button-back"  [routerLink]="['/Main']"><img class="arrow-back" src="/assets/svg/arrow-back.svg"> Zurück </button>
      </div>
      <div>
        <section>
@@ -316,6 +322,7 @@
            <a href="https://www.e-recht24.de">https://www.e-recht24.de</a>
          </p>
        </section>
+        <app-footer></app-footer>
      </div>
    </div>
   </div>
@@ -323,9 +330,6 @@
     <div class="text">
       <div class="titleSelection">
         <h2 class="privacyPolicyTitle">Privacy Policy</h2>
-        <button class="button-back" [routerLink]="['/Main']">
-          <img class="arrow-back" src="/assets/svg/arrow-back.svg" /> Go Back
-        </button>
       </div>
       <div>
         <section>
@@ -467,7 +471,10 @@
             <a href="https://www.e-recht24.de">https://www.e-recht24.de</a>
           </p>
         </section>
+         <app-footer></app-footer>
       </div>
+      
     </div>
-  </div>
+    </div>
+    </div>
   </main>
